@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  zoom: 0.9;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #222;
+  background-color: #ffffff;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 780px;
+}
+
+.logo {
+  width: 220px;
+  max-width: 70%;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #238bd1;
+  color: white;
+  text-decoration: none;
+  padding: 0.85rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  opacity: 0.85;
+}
+
+.products-page {
+  padding: 1.25rem;
+  background-color: #f7f9fb;
+  min-height: 100vh;
+}
+
+.products-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 1.75rem;
+}
+
+.small-logo {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.products-header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.products-header p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 420px));
+  justify-content: center;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: #ffffff;
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.product-image {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  background-color: #f4f7fa;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-card h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+
+.product-card ul {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+}
+
+.product-card li {
+  margin-bottom: 0.3rem;
+  color: #444;
+}
+
+.product-card .cta-button {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  html {
+    zoom: 1;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 2rem 1.25rem;
+  }
+
+  .logo {
+    width: 180px;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .product-card {
+    padding: 1rem;
+  }
+
+  .product-image {
+    height: 140px;
+  }
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 220px;
+  background-color: #f4f7fa;
+  border-radius: 12px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-image {
+  max-width: 150%;
+  max-height: 150%;
+  object-fit: contain;
+  display: block;
+}
