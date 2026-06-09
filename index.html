@@ -8,27 +8,240 @@
 </head>
 <body>
 
-  <section class="hero">
-    <div class="hero-content">
+<header class="site-header">
+  <div class="header-container">
 
+    <a href="#" class="header-logo">
       <img
         src="images/trustedallgoods-logo.png"
-        alt="Trusted All Goods Kitchenware Logo"
-        class="logo"
+        alt="Trusted All Goods Logo"
       />
+    </a>
 
-      <h1>Offering Practical Kitchen Utensils</h1>
-
-      <p class="hero-description">
-        At Trusted All Goods™, we are on a mission to delight our customers with great products designed for restaurants, households, and families—just like ours—for a simple life in the kitchen.
-      </p>
-
-      <a href="deli-containers.html" class="cta-button">
+    <nav class="header-nav">
+      <a href="#brand-story">Our Story</a>
+      <a href="#product-comparison" class="header-button">
         Shop Deli Containers
       </a>
+    </nav>
+
+  </div>
+</header>
+
+<section class="hero family-hero"></section>
+
+  <section class="brand-story" id="brand-story">
+
+    <div class="section-header">
+      <h2>Our Story</h2>
+      <p>Built around practical kitchen solutions for everyday families.</p>
+    </div>
+
+    <div class="carousel">
+
+      <button class="carousel-btn prev" aria-label="Previous slide">&#10094;</button>
+      <button class="carousel-btn next" aria-label="Next slide">&#10095;</button>
+
+      <div class="carousel-slide active">
+        <img src="images/about-us.png" alt="About Trusted All Goods" class="carousel-image" />
+        <div class="carousel-content">
+          <h3>About Us</h3>
+          <p>
+            Trusted All Goods was founded in 2022 with a simple mission: provide practical kitchen products that make cooking, meal prep, and food storage easier.
+          </p>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="images/smart-storage.png" alt="Smart kitchen storage containers" class="carousel-image" />
+        <div class="carousel-content">
+          <h3>Smart Storage</h3>
+          <p>
+            Stackable, reusable containers designed to keep kitchens organized and meals fresh.
+          </p>
+        </div>
+      </div>
+
+      <div class="carousel-slide">
+        <img src="images/family.png" alt="Products designed for families" class="carousel-image" />
+        <div class="carousel-content">
+          <h3>Made for Families</h3>
+          <p>
+            Designed for restaurants, households, and families just like ours.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="carousel-dots">
+      <button class="dot active" aria-label="View About Us slide"></button>
+      <button class="dot" aria-label="View Smart Storage slide"></button>
+      <button class="dot" aria-label="View Made for Families slide"></button>
+    </div>
+  </section>
+
+  <section class="review-highlights">
+  <div class="section-header">
+    <h2>Trusted by Hundreds of Happy Customers</h2>
+    <p>Rated 4.8 stars by customers who use our containers for meal prep, leftovers, and everyday kitchen storage.</p>
+  </div>
+
+  <div class="review-summary">
+    <div class="stars">★★★★★</div>
+    <p>4.8 Average Rating</p>
+  </div>
+
+  <div class="review-grid">
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>
+       “An excellent, high-quality product. I recommend it one hundred percent.”
+      </p>
+      <span>Verified Customer</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>
+        “Love these!”
+      </p>
+      <span>Verified Customer</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+
+      <h4>Amazing and durable</h4>
+
+      <p>
+      “My boyfriend loves these! We recently moved and I had to throw away most of his other deli containers so I had to buy him more 💗💗”
+      </p>
+
+      <span>Verified Purchase</span>
+    </div>
+
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="trust-grid">
+
+    <div class="trust-item">
+      <img src="images/bpa-free.png" alt="BPA Free" class="trust-image">
+      <h3>BPA-Free</h3>
+      <p>Made for everyday food storage.</p>
+    </div>
+
+    <div class="trust-item">
+      <img src="images/microwave-safe.png" alt="Microwave Safe" class="trust-image">
+      <h3>Microwave Safe</h3>
+      <p>Reheat meals with confidence.</p>
+    </div>
+
+    <div class="trust-item">
+      <img src="images/freezer-safe.png" alt="Freezer Safe" class="trust-image">
+      <h3>Freezer Safe</h3>
+      <p>Perfect for soups, sauces, and leftovers.</p>
+    </div>
+
+    <div class="trust-item">
+      <img src="images/dishwasher-safe.png" alt="Dishwasher Safe" class="trust-image">
+      <h3>Dishwasher Safe</h3>
+      <p>Easy cleanup after daily use.</p>
+    </div>
+
+  </div>
+</section>
+
+  <section class="product-comparison" id="product-comparison">
+    <div class="section-header">
+      <h2>Choose the Set That Fits Your Kitchen</h2>
+      <p>
+        Whether you're meal prepping for the week or stocking up for the whole family,
+        we have a set that fits your needs.
+      </p>
+    </div>
+
+    <div class="comparison-grid">
+
+      <div class="comparison-card" id="card-25">
+        <img
+          src="images/25-set.png"
+          alt="25 set 32 oz deli containers with lids"
+          class="comparison-image"
+        />
+
+        <span class="product-badge">Best for Weekly Meal Prep</span>
+
+        <h3>25 Set 32oz Deli Container</h3>
+
+        <p class="comparison-description">
+          A practical starter set for everyday meals, leftovers, and smaller households.
+        </p>
+
+        <ul>
+          <li>25 reusable 32 oz containers</li>
+          <li>28 waterproof labels</li>
+          <li>Great for weekly meal prep</li>
+          <li>Easy to store</li>
+          <li>Ideal for smaller households</li>
+        </ul>
+
+        <a
+          href="https://www.amazon.com/dp/B0D96RF93M"
+          target="_blank"
+          class="comparison-button"
+        >
+          Shop 25 Set
+        </a>
+      </div>
+
+      <div class="comparison-card featured" id="card-50">
+
+        <div class="popular-ribbon">
+          Most Popular
+        </div>
+
+        <img
+          src="images/50-set.png"
+          alt="50 set 32 oz deli containers with lids"
+          class="comparison-image"
+        />
+
+        <span class="product-badge">
+          Best for Families & Bulk Storage
+        </span>
+
+        <h3>50 Set 32oz Deli Containers</h3>
+
+        <p class="comparison-description">
+          A larger set built for families, bulk storage, restaurants, and high-volume kitchen use.
+        </p>
+
+        <ul>
+          <li>50 reusable 32 oz containers</li>
+          <li>56 waterproof labels</li>
+          <li>Perfect for families</li>
+          <li>Great for bulk food storage</li>
+          <li>Best value per container</li>
+        </ul>
+
+        <a
+          href="https://www.amazon.com/dp/B0CK5H19VG"
+          target="_blank"
+          class="comparison-button"
+        >
+          Shop 50 Set
+        </a>
+
+      </div>
 
     </div>
   </section>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
