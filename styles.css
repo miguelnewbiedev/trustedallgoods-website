@@ -819,7 +819,7 @@ body {
     background-repeat: no-repeat;
     background-color: #ffffff;
 
-    margin-bottom: -285px;
+    margin-bottom: -355px;
   }
 }
 
@@ -867,4 +867,54 @@ body {
 .footer-copy {
   font-size: 0.9rem;
   color: #9ca3af;
+}
+
+/* =========================
+   Trust Bar
+========================= */
+
+.trust-bar {
+    background-color: #f8fafc;
+    padding: 20px;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.trust-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.trust-rating {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.trust-subtext {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.trust-quote {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.trust-features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.trust-features span {
+    font-weight: 500;
+    color: #374151;
 }
