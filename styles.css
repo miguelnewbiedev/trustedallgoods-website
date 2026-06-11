@@ -811,15 +811,17 @@ body {
 }
 
 @media (max-width: 768px) {
-  .family-hero {
-    height: calc(100vh - 74px);
-    background-image: url("./images/hero-family-mobile.png");
-    background-size: contain;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-color: #ffffff;
 
-    margin-bottom: -355px;
+  .family-hero {
+    height: auto;
+     min-height: 0;
+     aspect-ratio: 9 / 13;
+     background-image: url("./images/hero-family-mobile.png");
+     background-size: contain;
+     background-position: center top;
+     background-repeat: no-repeat;
+     background-color: #ffffff;
+     margin-bottom: -60px;
   }
 }
 
