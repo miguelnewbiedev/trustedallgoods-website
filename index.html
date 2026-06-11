@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Trusted All Goods</title>
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TY913LLELT"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TY913LLELT');
+
+  function trackAmazonClick(buttonName) {
+  gtag('event', 'amazon_click', {
+    event_category: 'Outbound Click',
+    event_label: buttonName,
+    destination: 'Amazon'
+  });
+}
+</script>
+
 </head>
 <body>
 
@@ -18,12 +37,18 @@
       />
     </a>
 
-    <nav class="header-nav">
-      <a href="#brand-story">Our Story</a>
-      <a href="#product-comparison" class="header-button">
-        Shop Deli Containers
-      </a>
-    </nav>
+  <nav class="header-nav">
+  <a href="#brand-story">Our Story</a>
+
+  <a href="#product-comparison"
+     class="header-button"
+     onclick="gtag('event', 'navigation_click', {
+       event_category: 'Navigation',
+       event_label: 'Header Shop Deli Containers'
+     });">
+    Shop Deli Containers
+  </a>
+</nav>
 
   </div>
 </header>
@@ -216,12 +241,12 @@
           <li>Ideal for smaller households</li>
         </ul>
 
-        <a
-          href="https://www.amazon.com/dp/B0D96RF93M"
-          target="_blank"
-          class="comparison-button"
-        >
-          Shop 25 Set
+        <a 
+        href="https://www.amazon.com/dp/B0D96RF93M"
+        class="product-button" 
+        target="_blank"
+        onclick="trackAmazonClick('Shop 25 Set')">
+        Shop 25 Set
         </a>
       </div>
 
@@ -255,11 +280,11 @@
           <li>Best value per container</li>
         </ul>
 
-        <a
+        <a 
           href="https://www.amazon.com/dp/B0CK5H19VG"
+          class="product-button"
           target="_blank"
-          class="comparison-button"
-        >
+          onclick="trackAmazonClick('Shop 50 Set')">
           Shop 50 Set
         </a>
 
@@ -279,7 +304,10 @@
         <p>Practical kitchen solutions for everyday families.</p>
 
         <div class="footer-links">
-          <a href="https://www.amazon.com/stores/TrustedAllGoods/page/CC74BCF3-8991-45D7-896F-E46E87075913?" target="_blank">Amazon Store</a>
+          <a href="https://www.amazon.com/stores/TrustedAllGoods/page/CC74BCF3-8991-45D7-896F-E46E87075913?" target="_blank"
+            onclick="trackAmazonClick('Footer Amazon Store')">
+            Amazon Store
+          </a>
           <a href="mailto:support@trustedallgoods.com">Contact</a>
            <a href="privacy.html">Privacy Policy</a>
         </div>
