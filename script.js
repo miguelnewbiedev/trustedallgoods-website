@@ -4,11 +4,6 @@ const carousel = document.querySelector('.carousel');
 const prevBtn = document.querySelector('.prev');
 const nextBtn = document.querySelector('.next');
 
-const card25 = document.getElementById('card-25');
-const card50 = document.getElementById('card-50');
-const button25 = card25.querySelector('.comparison-button');
-const button50 = card50.querySelector('.comparison-button');
-
 let currentSlide = 0;
 let autoRotate;
 
@@ -62,18 +57,80 @@ carousel.addEventListener('mouseleave', startCarousel);
 showSlide(0);
 startCarousel();
 
-card25.addEventListener('click', () => {
-  window.location.href = 'https://www.amazon.com/dp/B0D96RF93M';
-});
+/* Interactive Product Selector */
 
-card50.addEventListener('click', () => {
-  window.location.href = 'https://www.amazon.com/dp/B0CK5H19VG';
-});
+const button25 = document.getElementById("button25");
+const button50 = document.getElementById("button50");
 
-button25.addEventListener('click', (event) => {
-  event.stopPropagation();
-});
+const hotspot25 = document.getElementById("hotspot25");
+const hotspot50 = document.getElementById("hotspot50");
 
-button50.addEventListener('click', (event) => {
-  event.stopPropagation();
-});
+const leftPanel = document.getElementById("leftPanel");
+const rightPanel = document.getElementById("rightPanel");
+
+const mobile25 = document.getElementById("mobile25");
+const mobile50 = document.getElementById("mobile50");
+
+function clearProductSelector() {
+  button25.classList.remove("active");
+  button50.classList.remove("active");
+
+  hotspot25.classList.remove("active");
+  hotspot50.classList.remove("active");
+
+  leftPanel.classList.remove("active");
+  rightPanel.classList.remove("active");
+
+  mobile25.classList.remove("active");
+  mobile50.classList.remove("active");
+
+  button25.setAttribute("aria-expanded", "false");
+  button50.setAttribute("aria-expanded", "false");
+}
+
+function show25Set() {
+  clearProductSelector();
+
+  button25.classList.add("active");
+  hotspot25.classList.add("active");
+
+  leftPanel.classList.add("active");
+  mobile25.classList.add("active");
+
+  button25.setAttribute("aria-expanded", "true");
+}
+
+function show50Set() {
+  clearProductSelector();
+
+  button50.classList.add("active");
+  hotspot50.classList.add("active");
+
+  rightPanel.classList.add("active");
+  mobile50.classList.add("active");
+
+  button50.setAttribute("aria-expanded", "true");
+}
+
+if (
+  button25 &&
+  button50 &&
+  hotspot25 &&
+  hotspot50 &&
+  leftPanel &&
+  rightPanel &&
+  mobile25 &&
+  mobile50
+) {
+  button25.addEventListener("mouseenter", show25Set);
+  button50.addEventListener("mouseenter", show50Set);
+
+  button25.addEventListener("click", show25Set);
+  button50.addEventListener("click", show50Set);
+
+  hotspot25.addEventListener("mouseenter", show25Set);
+  hotspot50.addEventListener("mouseenter", show50Set);
+
+  hotspot25.addEventListener("click", show25Set);
+  hotspot50.addEventListener("click", show50Set);
+}
