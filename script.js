@@ -1,77 +1,154 @@
-const slides = document.querySelectorAll('.carousel-slide');
-const dots = document.querySelectorAll('.dot');
-const carousel = document.querySelector('.carousel');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
+/* ===================================
+   OUR STORY CAROUSEL
+=================================== */
 
-let currentSlide = 0;
-let autoRotate;
+const storySlides = document.querySelectorAll(
+  ".brand-story .carousel-slide"
+);
 
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
+const storyDots = document.querySelectorAll(
+  ".brand-story .dot"
+);
+
+const storyCarousel = document.querySelector(
+  ".brand-story .carousel"
+);
+
+const storyPrevBtn = document.querySelector(
+  ".brand-story .prev"
+);
+
+const storyNextBtn = document.querySelector(
+  ".brand-story .next"
+);
+
+let currentStorySlide = 0;
+let storyAutoRotate;
+
+
+function showStorySlide(index) {
+
+  storySlides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
   });
 
-  dots.forEach((dot, i) => {
-    dot.classList.toggle('active', i === index);
+  storyDots.forEach((dot, i) => {
+    dot.classList.toggle("active", i === index);
   });
 
-  currentSlide = index;
+  currentStorySlide = index;
 }
 
-function nextSlide() {
-  const next = (currentSlide + 1) % slides.length;
-  showSlide(next);
+
+function nextStorySlide() {
+
+  const next =
+    (currentStorySlide + 1) % storySlides.length;
+
+  showStorySlide(next);
 }
 
-function previousSlide() {
-  const prev = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(prev);
+
+function previousStorySlide() {
+
+  const previous =
+    (currentStorySlide - 1 + storySlides.length) %
+    storySlides.length;
+
+  showStorySlide(previous);
 }
 
-function startCarousel() {
-  autoRotate = setInterval(nextSlide, 5000);
+
+function startStoryCarousel() {
+
+  storyAutoRotate =
+    setInterval(nextStorySlide, 5000);
 }
 
-function stopCarousel() {
-  clearInterval(autoRotate);
+
+function stopStoryCarousel() {
+
+  clearInterval(storyAutoRotate);
 }
 
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    showSlide(index);
+
+if (
+  storyCarousel &&
+  storyPrevBtn &&
+  storyNextBtn &&
+  storySlides.length
+) {
+
+  storyDots.forEach((dot, index) => {
+
+    dot.addEventListener("click", () => {
+      showStorySlide(index);
+    });
+
   });
-});
 
-prevBtn.addEventListener('click', () => {
-  previousSlide();
-});
 
-nextBtn.addEventListener('click', () => {
-  nextSlide();
-});
+  storyPrevBtn.addEventListener(
+    "click",
+    previousStorySlide
+  );
 
-carousel.addEventListener('mouseenter', stopCarousel);
-carousel.addEventListener('mouseleave', startCarousel);
 
-showSlide(0);
-startCarousel();
+  storyNextBtn.addEventListener(
+    "click",
+    nextStorySlide
+  );
 
-/* Interactive Product Selector */
 
-const button25 = document.getElementById("button25");
-const button50 = document.getElementById("button50");
+  storyCarousel.addEventListener(
+    "mouseenter",
+    stopStoryCarousel
+  );
 
-const hotspot25 = document.getElementById("hotspot25");
-const hotspot50 = document.getElementById("hotspot50");
 
-const leftPanel = document.getElementById("leftPanel");
-const rightPanel = document.getElementById("rightPanel");
+  storyCarousel.addEventListener(
+    "mouseleave",
+    startStoryCarousel
+  );
 
-const mobile25 = document.getElementById("mobile25");
-const mobile50 = document.getElementById("mobile50");
+
+  showStorySlide(0);
+  startStoryCarousel();
+}
+
+
+
+/* ===================================
+   INTERACTIVE PRODUCT SELECTOR
+=================================== */
+
+const button25 =
+  document.getElementById("button25");
+
+const button50 =
+  document.getElementById("button50");
+
+const hotspot25 =
+  document.getElementById("hotspot25");
+
+const hotspot50 =
+  document.getElementById("hotspot50");
+
+const leftPanel =
+  document.getElementById("leftPanel");
+
+const rightPanel =
+  document.getElementById("rightPanel");
+
+const mobile25 =
+  document.getElementById("mobile25");
+
+const mobile50 =
+  document.getElementById("mobile50");
+
 
 function clearProductSelector() {
+
   button25.classList.remove("active");
   button50.classList.remove("active");
 
@@ -84,11 +161,20 @@ function clearProductSelector() {
   mobile25.classList.remove("active");
   mobile50.classList.remove("active");
 
-  button25.setAttribute("aria-expanded", "false");
-  button50.setAttribute("aria-expanded", "false");
+  button25.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+  button50.setAttribute(
+    "aria-expanded",
+    "false"
+  );
 }
 
+
 function show25Set() {
+
   clearProductSelector();
 
   button25.classList.add("active");
@@ -97,10 +183,15 @@ function show25Set() {
   leftPanel.classList.add("active");
   mobile25.classList.add("active");
 
-  button25.setAttribute("aria-expanded", "true");
+  button25.setAttribute(
+    "aria-expanded",
+    "true"
+  );
 }
 
+
 function show50Set() {
+
   clearProductSelector();
 
   button50.classList.add("active");
@@ -109,8 +200,12 @@ function show50Set() {
   rightPanel.classList.add("active");
   mobile50.classList.add("active");
 
-  button50.setAttribute("aria-expanded", "true");
+  button50.setAttribute(
+    "aria-expanded",
+    "true"
+  );
 }
+
 
 if (
   button25 &&
@@ -122,15 +217,215 @@ if (
   mobile25 &&
   mobile50
 ) {
-  button25.addEventListener("mouseenter", show25Set);
-  button50.addEventListener("mouseenter", show50Set);
 
-  button25.addEventListener("click", show25Set);
-  button50.addEventListener("click", show50Set);
+  button25.addEventListener(
+    "mouseenter",
+    show25Set
+  );
 
-  hotspot25.addEventListener("mouseenter", show25Set);
-  hotspot50.addEventListener("mouseenter", show50Set);
+  button50.addEventListener(
+    "mouseenter",
+    show50Set
+  );
 
-  hotspot25.addEventListener("click", show25Set);
-  hotspot50.addEventListener("click", show50Set);
+
+  button25.addEventListener(
+    "click",
+    show25Set
+  );
+
+  button50.addEventListener(
+    "click",
+    show50Set
+  );
+
+
+  hotspot25.addEventListener(
+    "mouseenter",
+    show25Set
+  );
+
+  hotspot50.addEventListener(
+    "mouseenter",
+    show50Set
+  );
+
+
+  hotspot25.addEventListener(
+    "click",
+    show25Set
+  );
+
+  hotspot50.addEventListener(
+    "click",
+    show50Set
+  );
+}
+
+
+
+/* ===================================
+   PRODUCT IMAGE CAROUSEL
+=================================== */
+
+const productCarousel =
+  document.getElementById("productCarousel");
+
+
+if (productCarousel) {
+
+  const productSlides =
+    productCarousel.querySelectorAll(
+      ".product-carousel-slide"
+    );
+
+  const productDots =
+    productCarousel.querySelectorAll(
+      ".carousel-dot"
+    );
+
+  const productPrevButton =
+    document.getElementById("carouselPrev");
+
+  const productNextButton =
+    document.getElementById("carouselNext");
+
+  let currentProductSlide = 0;
+
+
+  function showProductSlide(index) {
+
+    productSlides[
+      currentProductSlide
+    ].classList.remove("active");
+
+    productDots[
+      currentProductSlide
+    ].classList.remove("active");
+
+
+    currentProductSlide = index;
+
+
+    productSlides[
+      currentProductSlide
+    ].classList.add("active");
+
+    productDots[
+      currentProductSlide
+    ].classList.add("active");
+  }
+
+
+  function showNextProductSlide() {
+
+    const nextSlide =
+      (currentProductSlide + 1) %
+      productSlides.length;
+
+    showProductSlide(nextSlide);
+  }
+
+
+  function showPreviousProductSlide() {
+
+    const previousSlide =
+      (
+        currentProductSlide -
+        1 +
+        productSlides.length
+      ) %
+      productSlides.length;
+
+    showProductSlide(previousSlide);
+  }
+
+
+  if (
+    productPrevButton &&
+    productNextButton &&
+    productSlides.length &&
+    productDots.length
+  ) {
+
+    productNextButton.addEventListener(
+      "click",
+      showNextProductSlide
+    );
+
+    productPrevButton.addEventListener(
+      "click",
+      showPreviousProductSlide
+    );
+
+
+    productDots.forEach((dot) => {
+
+  dot.addEventListener("click", () => {
+
+    const slideIndex =
+      Number(dot.dataset.slide);
+
+    showProductSlide(slideIndex);
+  });
+
+});
+
+}
+
+
+/* MOBILE SWIPE GESTURE */
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+productCarousel.addEventListener("touchstart", (event) => {
+
+  touchStartX =
+    event.changedTouches[0].screenX;
+
+  touchStartY =
+    event.changedTouches[0].screenY;
+
+});
+
+
+productCarousel.addEventListener("touchend", (event) => {
+
+  const touchEndX =
+    event.changedTouches[0].screenX;
+
+  const touchEndY =
+    event.changedTouches[0].screenY;
+
+  const horizontalDistance =
+    touchStartX - touchEndX;
+
+  const verticalDistance =
+    touchStartY - touchEndY;
+
+  const minimumSwipeDistance = 50;
+
+
+  if (
+    Math.abs(horizontalDistance) >
+      Math.abs(verticalDistance) &&
+    Math.abs(horizontalDistance) >
+      minimumSwipeDistance
+  ) {
+
+    if (horizontalDistance > 0) {
+
+      showNextProductSlide();
+
+    } else {
+
+      showPreviousProductSlide();
+
+    }
+
+  }
+
+});
+
 }

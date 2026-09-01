@@ -1,349 +1,512 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Trusted All Goods</title>
+
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TY913LLELT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY913LLELT"></script>
 
-  gtag('config', 'G-TY913LLELT');
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-  function trackAmazonClick(buttonName) {
-  gtag('event', 'amazon_click', {
-    event_category: 'Outbound Click',
-    event_label: buttonName,
-    destination: 'Amazon'
-  });
-}
-</script>
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-TY913LLELT');
+
+    function trackAmazonClick(buttonName) {
+      gtag('event', 'amazon_click', {
+        event_category: 'Outbound Click',
+        event_label: buttonName,
+        destination: 'Amazon'
+      });
+    }
+  </script>
 
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="header-container">
+  <!-- =========================
+       HEADER
+  ========================== -->
 
-    <a href="#" class="header-logo">
-      <img
-        src="images/trustedallgoods-logo.png"
-        alt="Trusted All Goods Logo"
-      />
-    </a>
+  <header class="site-header">
 
-  <nav class="header-nav">
-  <a href="#brand-story">Our Story</a>
+    <div class="header-container">
 
-  <a href="#product-comparison"
-     class="header-button"
-     onclick="gtag('event', 'navigation_click', {
-       event_category: 'Navigation',
-       event_label: 'Header Shop Deli Containers'
-     });">
-    Shop Deli Containers
-  </a>
-</nav>
+      <a href="#" class="header-logo">
+        <img
+          src="images/trustedallgoods-logo.png"
+          alt="Trusted All Goods Logo"
+        />
+      </a>
 
-  </div>
-</header>
+      <nav class="header-nav">
 
-<section class="hero family-hero"></section>
+        <a href="#brand-story">
+          Our Story
+        </a>
 
-<!-- Trust Bar -->
-<section class="trust-bar">
-    <div class="trust-container">
+        <a
+          href="#product-comparison"
+          class="header-button"
+          onclick="gtag('event', 'navigation_click', {
+            event_category: 'Navigation',
+            event_label: 'Header Shop Deli Containers'
+          });"
+        >
+          Shop Deli Containers
+        </a>
 
-        <div class="trust-rating">
-            ⭐⭐⭐⭐⭐ Rated 4.8 Stars
-        </div>
-
-        <p class="trust-subtext">
-            Trusted by Hundreds of Happy Customers
-        </p>
-
-        <p class="trust-quote">
-            "The lids lock on and stay on."
-        </p>
-
-        <div class="trust-features">
-            <span>✓ BPA Free</span>
-            <span>✓ Leakproof</span>
-            <span>✓ Microwave Safe</span>
-            <span>✓ Freezer Safe</span>
-            <span>✓ Dishwasher Safe</span>
-        </div>
+      </nav>
 
     </div>
-</section>
-        
+
+  </header>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero family-hero"></section>
+
+
+  <!-- =========================
+       TRUST BAR
+  ========================== -->
+
+  <section class="trust-bar">
+
+    <div class="trust-container">
+
+      <div class="trust-rating">
+        ⭐⭐⭐⭐⭐ Rated 4.8 Stars
+      </div>
+
+      <p class="trust-subtext">
+        Trusted by Hundreds of Happy Customers
+      </p>
+
+      <p class="trust-quote">
+        "The lids lock on and stay on."
+      </p>
+
+      <div class="trust-features">
+        <span>✓ BPA Free</span>
+        <span>✓ Leakproof</span>
+        <span>✓ Microwave Safe</span>
+        <span>✓ Freezer Safe</span>
+        <span>✓ Dishwasher Safe</span>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       BRAND STORY
+  ========================== -->
+
   <section class="brand-story" id="brand-story">
 
     <div class="section-header">
+
       <h2>Our Story</h2>
-      <p>Built around practical kitchen solutions for everyday families.</p>
+
+      <p>
+        Built around practical kitchen solutions for everyday families.
+      </p>
+
     </div>
+
 
     <div class="carousel">
 
-      <button class="carousel-btn prev" aria-label="Previous slide">&#10094;</button>
-      <button class="carousel-btn next" aria-label="Next slide">&#10095;</button>
+      <button
+        class="carousel-btn prev"
+        aria-label="Previous slide"
+      >
+        &#10094;
+      </button>
+
+      <button
+        class="carousel-btn next"
+        aria-label="Next slide"
+      >
+        &#10095;
+      </button>
+
+
+      <!-- STORY SLIDE 1 -->
 
       <div class="carousel-slide active">
-        <img src="images/about-us.png" alt="About Trusted All Goods" class="carousel-image" />
+
+        <img
+          src="images/about-us.png"
+          alt="About Trusted All Goods"
+          class="carousel-image"
+        />
+
         <div class="carousel-content">
+
           <h3>About Us</h3>
+
           <p>
-            Trusted All Goods was founded in 2022 with a simple mission: provide practical kitchen products that make cooking, meal prep, and food storage easier.
+            Trusted All Goods was founded in 2022 with a simple mission:
+            provide practical kitchen products that make cooking,
+            meal prep, and food storage easier.
           </p>
+
         </div>
+
       </div>
 
+
+      <!-- STORY SLIDE 2 -->
+
       <div class="carousel-slide">
-        <img src="images/smart-storage.png" alt="Smart kitchen storage containers" class="carousel-image" />
+
+        <img
+          src="images/smart-storage.png"
+          alt="Smart kitchen storage containers"
+          class="carousel-image"
+        />
+
         <div class="carousel-content">
+
           <h3>Smart Storage</h3>
+
           <p>
-            Stackable, reusable containers designed to keep kitchens organized and meals fresh.
+            Stackable, reusable containers designed to keep kitchens
+            organized and meals fresh.
           </p>
+
         </div>
+
       </div>
 
+
+      <!-- STORY SLIDE 3 -->
+
       <div class="carousel-slide">
-        <img src="images/family.png" alt="Products designed for families" class="carousel-image" />
+
+        <img
+          src="images/family.png"
+          alt="Products designed for families"
+          class="carousel-image"
+        />
+
         <div class="carousel-content">
+
           <h3>Made for Families</h3>
+
           <p>
-            Designed for restaurants, households, and families just like ours.
+            Designed for restaurants, households,
+            and families just like ours.
           </p>
+
         </div>
+
       </div>
 
     </div>
+
 
     <div class="carousel-dots">
-      <button class="dot active" aria-label="View About Us slide"></button>
-      <button class="dot" aria-label="View Smart Storage slide"></button>
-      <button class="dot" aria-label="View Made for Families slide"></button>
+
+      <button
+        class="dot active"
+        aria-label="View About Us slide"
+      ></button>
+
+      <button
+        class="dot"
+        aria-label="View Smart Storage slide"
+      ></button>
+
+      <button
+        class="dot"
+        aria-label="View Made for Families slide"
+      ></button>
+
     </div>
+
   </section>
 
+
+  <!-- =========================
+       REVIEWS
+  ========================== -->
+
   <section class="review-highlights">
-  <div class="section-header">
-    <h2>Trusted by Hundreds of Happy Customers</h2>
-    <p>Rated 4.8 stars by customers who use our containers for meal prep, leftovers, and everyday kitchen storage.</p>
-  </div>
 
-  <div class="review-summary">
-    <div class="stars">★★★★★</div>
-    <p>4.8 Average Rating</p>
-  </div>
+    <div class="section-header">
 
-  <div class="review-grid">
-
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>
-       “An excellent, high-quality product. I recommend it one hundred percent.”
-      </p>
-      <span>Verified Customer</span>
-    </div>
-
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>
-        “Love these!”
-      </p>
-      <span>Verified Customer</span>
-    </div>
-
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-
-      <h4>Amazing and durable</h4>
+      <h2>
+        Trusted by Hundreds of Happy Customers
+      </h2>
 
       <p>
-      “My boyfriend loves these! We recently moved and I had to throw away most of his other deli containers so I had to buy him more 💗💗”
+        Rated 4.8 stars by customers who use our containers
+        for meal prep, leftovers, and everyday kitchen storage.
       </p>
 
-      <span>Verified Purchase</span>
     </div>
 
-  </div>
-</section>
 
-<section class="trust-section">
-  <div class="trust-grid">
+    <div class="review-summary">
 
-    <div class="trust-item">
-      <img src="images/bpa-free.png" alt="BPA Free" class="trust-image">
-      <h3>BPA-Free</h3>
-      <p>Made for everyday food storage.</p>
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <p>
+        4.8 Average Rating
+      </p>
+
     </div>
 
-    <div class="trust-item">
-      <img src="images/microwave-safe.png" alt="Microwave Safe" class="trust-image">
-      <h3>Microwave Safe</h3>
-      <p>Reheat meals with confidence.</p>
-    </div>
 
-    <div class="trust-item">
-      <img src="images/freezer-safe.png" alt="Freezer Safe" class="trust-image">
-      <h3>Freezer Safe</h3>
-      <p>Perfect for soups, sauces, and leftovers.</p>
-    </div>
+    <div class="review-grid">
 
-    <div class="trust-item">
-      <img src="images/dishwasher-safe.png" alt="Dishwasher Safe" class="trust-image">
-      <h3>Dishwasher Safe</h3>
-      <p>Easy cleanup after daily use.</p>
-    </div>
+      <div class="review-card">
 
-  </div>
-</section>
-
-  <section class="product-comparison" id="product-comparison">
-
-  <div class="section-header">
-    <h2>32 oz Deli Containers with Lids</h2>
-    <p>Choose the Set That Fits Your Kitchen</p>
-  </div>
-
-  <div class="selector-buttons">
-
-    <button
-      type="button"
-      class="set-button"
-      id="button25"
-      aria-expanded="false"
-    >
-      <span class="set-number">25 Set</span>
-      <span class="set-label">Weekly meal prep</span>
-    </button>
-
-    <button
-      type="button"
-      class="set-button"
-      id="button50"
-      aria-expanded="false"
-    >
-      <span class="set-number">50 Set</span>
-      <span class="set-label">Families & bulk storage</span>
-    </button>
-
-  </div>
-
-  <div class="desktop-selector">
-
-    <!-- 25 SET DETAILS -->
-
-    <aside class="side-panel" id="leftPanel">
-
-      <div class="details-card">
-
-        <span class="eyebrow">
-          Best for Weekly Meal Prep
-        </span>
-
-        <h2>25 Set</h2>
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
-          A practical starter option for everyday meals,
-          leftovers, and smaller households.
+          “An excellent, high-quality product.
+          I recommend it one hundred percent.”
         </p>
 
-        <ul>
-          <li>25 reusable 32 oz containers</li>
-          <li>28 waterproof labels</li>
-          <li>Easy everyday storage</li>
-          <li>Ideal for smaller households</li>
-        </ul>
-
-        <a
-          href="https://www.amazon.com/dp/B0D96RF93M"
-          target="_blank"
-          class="shop-button"
-          onclick="trackAmazonClick('Shop 25 Set')"
-        >
-          Shop 25 Set
-        </a>
+        <span>
+          Verified Customer
+        </span>
 
       </div>
 
-    </aside>
 
-    <!-- PRODUCT IMAGE -->
+      <div class="review-card">
 
-    <div class="product-stage">
-
-      <img
-        src="images/product-selector-main.png"
-        alt="Trusted All Goods 25 and 50 set deli container options"
-      />
-
-      <button
-        type="button"
-        class="image-hotspot hotspot-25"
-        id="hotspot25"
-        aria-label="View 25 set details"
-      ></button>
-
-      <button
-        type="button"
-        class="image-hotspot hotspot-50"
-        id="hotspot50"
-        aria-label="View 50 set details"
-      ></button>
-
-    </div>
-
-    <!-- 50 SET DETAILS -->
-
-    <aside class="side-panel" id="rightPanel">
-
-      <div class="details-card">
-
-        <span class="eyebrow">
-          Best for Families & Bulk Storage
-        </span>
-
-        <h2>50 Set</h2>
+        <div class="stars">
+          ★★★★★
+        </div>
 
         <p>
-          A larger option for families, restaurants,
-          bulk storage, and high-volume kitchen use.
+          “Love these!”
         </p>
 
-        <ul>
-          <li>50 reusable 32 oz containers</li>
-          <li>56 waterproof labels</li>
-          <li>Great for bulk food storage</li>
-          <li>Best value per container</li>
-        </ul>
-
-        <a
-          href="https://www.amazon.com/dp/B0CK5H19VG"
-          target="_blank"
-          class="shop-button"
-          onclick="trackAmazonClick('Shop 50 Set')"
-        >
-          Shop 50 Set
-        </a>
+        <span>
+          Verified Customer
+        </span>
 
       </div>
 
-    </aside>
 
-    <!-- MOBILE DETAILS -->
+      <div class="review-card">
 
-    <div class="mobile-details">
+        <div class="stars">
+          ★★★★★
+        </div>
 
-      <article class="mobile-panel" id="mobile25">
+        <h4>
+          Amazing and durable
+        </h4>
+
+        <p>
+          “My boyfriend loves these! We recently moved and I had
+          to throw away most of his other deli containers
+          so I had to buy him more 💗💗”
+        </p>
+
+        <span>
+          Verified Purchase
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       TRUST SECTION
+  ========================== -->
+
+  <section class="trust-section">
+
+    <div class="trust-grid">
+
+
+      <div class="trust-item">
+
+        <img
+          src="images/bpa-free.png"
+          alt="BPA Free"
+          class="trust-image"
+        />
+
+        <h3>
+          BPA-Free
+        </h3>
+
+        <p>
+          Made for everyday food storage.
+        </p>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <img
+          src="images/microwave-safe.png"
+          alt="Microwave Safe"
+          class="trust-image"
+        />
+
+        <h3>
+          Microwave Safe
+        </h3>
+
+        <p>
+          Reheat meals with confidence.
+        </p>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <img
+          src="images/freezer-safe.png"
+          alt="Freezer Safe"
+          class="trust-image"
+        />
+
+        <h3>
+          Freezer Safe
+        </h3>
+
+        <p>
+          Perfect for soups, sauces, and leftovers.
+        </p>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <img
+          src="images/dishwasher-safe.png"
+          alt="Dishwasher Safe"
+          class="trust-image"
+        />
+
+        <h3>
+          Dishwasher Safe
+        </h3>
+
+        <p>
+          Easy cleanup after daily use.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       PRODUCT SELECTOR
+  ========================== -->
+
+  <section
+    class="product-comparison"
+    id="product-comparison"
+  >
+
+    <div class="section-header">
+
+      <h2>
+        32 oz Deli Containers with Lids
+      </h2>
+
+      <p>
+        Choose the Set That Fits Your Kitchen
+      </p>
+
+    </div>
+
+
+    <!-- SET SELECTOR BUTTONS -->
+
+    <div class="selector-buttons">
+
+      <button
+        type="button"
+        class="set-button"
+        id="button25"
+        aria-expanded="false"
+      >
+
+        <span class="set-number">
+          25 Set
+        </span>
+
+        <span class="set-label">
+          Weekly meal prep
+        </span>
+
+      </button>
+
+
+      <button
+        type="button"
+        class="set-button"
+        id="button50"
+        aria-expanded="false"
+      >
+
+        <span class="set-number">
+          50 Set
+        </span>
+
+        <span class="set-label">
+          Families & bulk storage
+        </span>
+
+      </button>
+
+    </div>
+
+
+    <div class="desktop-selector">
+
+
+      <!-- =========================
+           25 SET DETAILS
+      ========================== -->
+
+      <aside
+        class="side-panel"
+        id="leftPanel"
+      >
 
         <div class="details-card">
 
@@ -351,7 +514,14 @@
             Best for Weekly Meal Prep
           </span>
 
-          <h2>25 Set</h2>
+          <h2>
+            25 Set
+          </h2>
+
+          <p>
+            A practical starter option for everyday meals,
+            leftovers, and smaller households.
+          </p>
 
           <ul>
             <li>25 reusable 32 oz containers</li>
@@ -361,19 +531,180 @@
           </ul>
 
           <a
-            href="https://www.amazon.com/dp/B0D96RF93M"
+            href="https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&ref_=aa_maas&tag=maas"
             target="_blank"
             class="shop-button"
-            onclick="trackAmazonClick('Shop 25 Set Mobile')"
+            onclick="trackAmazonClick('Shop 25 Set')"
           >
             Shop 25 Set
           </a>
 
         </div>
 
-      </article>
+      </aside>
 
-      <article class="mobile-panel" id="mobile50">
+
+      <!-- =========================
+           PRODUCT IMAGE CAROUSEL
+      ========================== -->
+
+      <div class="product-stage">
+
+        <div
+          class="product-carousel"
+          id="productCarousel"
+        >
+
+
+          <!-- CAROUSEL IMAGES -->
+
+          <div class="carousel-track">
+
+
+            <!-- IMAGE 1 -->
+
+            <div class="product-carousel-slide active">
+
+              <img
+                src="images/product-selector-main.png"
+                alt="Trusted All Goods 25 and 50 set deli container options"
+              />
+
+
+              <!-- 25 SET HOTSPOT -->
+
+              <button
+                type="button"
+                class="image-hotspot hotspot-25"
+                id="hotspot25"
+                aria-label="View 25 set details"
+              ></button>
+
+
+              <!-- 50 SET HOTSPOT -->
+
+              <button
+                type="button"
+                class="image-hotspot hotspot-50"
+                id="hotspot50"
+                aria-label="View 50 set details"
+              ></button>
+
+            </div>
+
+
+            <!-- IMAGE 2 -->
+
+            <div class="product-carousel-slide">
+
+              <img
+                src="images/product-image-02.png"
+                alt="Trusted All Goods deli container product image 2"
+              />
+
+            </div>
+
+
+            <!-- IMAGE 3 -->
+
+            <div class="product-carousel-slide">
+
+              <img
+                src="images/product-image-03.png"
+                alt="Trusted All Goods deli container product image 3"
+              />
+
+            </div>
+
+
+            <!-- IMAGE 4 -->
+
+            <div class="product-carousel-slide">
+
+              <img
+                src="images/product-image-04.png"
+                alt="Trusted All Goods deli container product image 4"
+              />
+
+            </div>
+
+          </div>
+
+
+          <!-- PREVIOUS IMAGE -->
+
+          <button
+            type="button"
+            class="carousel-arrow carousel-arrow-left"
+            id="carouselPrev"
+            aria-label="Previous product image"
+          >
+            &#10094;
+          </button>
+
+
+          <!-- NEXT IMAGE -->
+
+          <button
+            type="button"
+            class="carousel-arrow carousel-arrow-right"
+            id="carouselNext"
+            aria-label="Next product image"
+          >
+            &#10095;
+          </button>
+
+
+          <!-- PRODUCT CAROUSEL DOTS -->
+
+          <div
+            class="product-carousel-dots"
+            aria-label="Product image navigation"
+          >
+
+            <button
+              type="button"
+              class="carousel-dot active"
+              data-slide="0"
+              aria-label="View product image 1"
+            ></button>
+
+            <button
+              type="button"
+              class="carousel-dot"
+              data-slide="1"
+              aria-label="View product image 2"
+            ></button>
+
+            <button
+              type="button"
+              class="carousel-dot"
+              data-slide="2"
+              aria-label="View product image 3"
+            ></button>
+
+            <button
+              type="button"
+              class="carousel-dot"
+              data-slide="3"
+              aria-label="View product image 4"
+            ></button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           50 SET DETAILS
+      ========================== -->
+
+      <aside
+        class="side-panel"
+        id="rightPanel"
+      >
 
         <div class="details-card">
 
@@ -381,7 +712,14 @@
             Best for Families & Bulk Storage
           </span>
 
-          <h2>50 Set</h2>
+          <h2>
+            50 Set
+          </h2>
+
+          <p>
+            A larger option for families, restaurants,
+            bulk storage, and high-volume kitchen use.
+          </p>
 
           <ul>
             <li>50 reusable 32 oz containers</li>
@@ -391,48 +729,157 @@
           </ul>
 
           <a
-            href="https://www.amazon.com/dp/B0CK5H19VG"
+            href="https://www.amazon.com/dp/B0CK5H19VG?maas=maas_adg_9DBB0D6C2F54A756518C25DAF8F27591_afap_abs&ref_=aa_maas&tag=maas"
             target="_blank"
             class="shop-button"
-            onclick="trackAmazonClick('Shop 50 Set Mobile')"
+            onclick="trackAmazonClick('Shop 50 Set')"
           >
             Shop 50 Set
           </a>
 
         </div>
 
-      </article>
+      </aside>
+
+
+      <!-- =========================
+           MOBILE DETAILS
+      ========================== -->
+
+      <div class="mobile-details">
+
+
+        <!-- MOBILE 25 SET -->
+
+        <article
+          class="mobile-panel"
+          id="mobile25"
+        >
+
+          <div class="details-card">
+
+            <span class="eyebrow">
+              Best for Weekly Meal Prep
+            </span>
+
+            <h2>
+              25 Set
+            </h2>
+
+            <ul>
+              <li>25 reusable 32 oz containers</li>
+              <li>28 waterproof labels</li>
+              <li>Easy everyday storage</li>
+              <li>Ideal for smaller households</li>
+            </ul>
+
+            <a
+              href="https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&ref_=aa_maas&tag=maas"
+              target="_blank"
+              class="shop-button"
+              onclick="trackAmazonClick('Shop 25 Set Mobile')"
+            >
+              Shop 25 Set
+            </a>
+
+          </div>
+
+        </article>
+
+
+        <!-- MOBILE 50 SET -->
+
+        <article
+          class="mobile-panel"
+          id="mobile50"
+        >
+
+          <div class="details-card">
+
+            <span class="eyebrow">
+              Best for Families & Bulk Storage
+            </span>
+
+            <h2>
+              50 Set
+            </h2>
+
+            <ul>
+              <li>50 reusable 32 oz containers</li>
+              <li>56 waterproof labels</li>
+              <li>Great for bulk food storage</li>
+              <li>Best value per container</li>
+            </ul>
+
+            <a
+              href="https://www.amazon.com/dp/B0CK5H19VG?maas=maas_adg_9DBB0D6C2F54A756518C25DAF8F27591_afap_abs&ref_=aa_maas&tag=maas"
+              target="_blank"
+              class="shop-button"
+              onclick="trackAmazonClick('Shop 50 Set Mobile')"
+            >
+              Shop 50 Set
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
 
     </div>
 
-  </div>
+  </section>
 
-</section>
 
-    </section>
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-    <!-- Footer -->
-    <footer class="site-footer">
-      <div class="footer-content">
-        <h3>Trusted All Goods</h3>
-        <p>Practical kitchen solutions for everyday families.</p>
+  <footer class="site-footer">
 
-        <div class="footer-links">
-          <a href="https://www.amazon.com/stores/TrustedAllGoods/page/CC74BCF3-8991-45D7-896F-E46E87075913?" target="_blank"
-            onclick="trackAmazonClick('Footer Amazon Store')">
-            Amazon Store
-          </a>
-          <a href="mailto:support@trustedallgoods.com">Contact</a>
-           <a href="privacy.html">Privacy Policy</a>
-        </div>
+    <div class="footer-content">
 
-        <p class="footer-copy">
-          © 2026 Trusted All Goods LLC. All rights reserved.
-        </p>
+      <h3>
+        Trusted All Goods
+      </h3>
+
+      <p>
+        Practical kitchen solutions for everyday families.
+      </p>
+
+
+      <div class="footer-links">
+
+        <a
+          href="https://www.amazon.com/stores/TrustedAllGoods/page/CC74BCF3-8991-45D7-896F-E46E87075913?"
+          target="_blank"
+          onclick="trackAmazonClick('Footer Amazon Store')"
+        >
+          Amazon Store
+        </a>
+
+        <a href="mailto:support@trustedallgoods.com">
+          Contact
+        </a>
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
       </div>
-    </footer>
 
-    <script src="script.js"></script>
+
+      <p class="footer-copy">
+        © 2026 Trusted All Goods LLC. All rights reserved.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <script src="script.js"></script>
 
 </body>
+
 </html>
