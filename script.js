@@ -295,26 +295,37 @@ if (productCarousel) {
 
   function showProductSlide(index) {
 
-    productSlides[
-      currentProductSlide
-    ].classList.remove("active");
+  productSlides[
+    currentProductSlide
+  ].classList.remove("active");
 
-    productDots[
-      currentProductSlide
-    ].classList.remove("active");
-
-
-    currentProductSlide = index;
+  productDots[
+    currentProductSlide
+  ].classList.remove("active");
 
 
-    productSlides[
-      currentProductSlide
-    ].classList.add("active");
+  currentProductSlide = index;
 
-    productDots[
-      currentProductSlide
-    ].classList.add("active");
+
+  productSlides[
+    currentProductSlide
+  ].classList.add("active");
+
+  productDots[
+    currentProductSlide
+  ].classList.add("active");
+
+
+  if (hotspot25 && hotspot50) {
+
+    hotspot25.style.display =
+      index === 0 ? "" : "none";
+
+    hotspot50.style.display =
+      index === 0 ? "" : "none";
+
   }
+}
 
 
   function showNextProductSlide() {

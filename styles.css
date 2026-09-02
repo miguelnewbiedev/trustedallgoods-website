@@ -1150,6 +1150,10 @@ body {
     gap: 10px;
   }
 
+  .hotspot-50 {
+    top: 29%;
+  }
+
   .set-button {
     padding: 14px 10px;
   }
@@ -1276,4 +1280,64 @@ body {
     right: 8px;
   }
 
+}
+
+/* =========================
+   AMAZON SOCIAL PROOF
+========================= */
+
+.amazon-social-proof {
+  display: block;
+  text-align: center;
+  margin: 8px auto 28px;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.amazon-rating-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.amazon-stars {
+  color: #f59e0b;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+
+.amazon-score {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.amazon-review-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.amazon-rating-count {
+  color: #4b5563;
+}
+
+.amazon-review-divider {
+  color: #9ca3af;
+}
+
+.amazon-reviews-link {
+  color: #007185;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.amazon-reviews-link:hover {
+  text-decoration: underline;
 }
