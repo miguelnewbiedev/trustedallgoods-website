@@ -1341,3 +1341,115 @@ body {
 .amazon-reviews-link:hover {
   text-decoration: underline;
 }
+
+/* =========================
+   UGC / CUSTOMER VIDEOS
+========================= */
+
+.ugc-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 24px;
+}
+
+.ugc-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.ugc-header h2 {
+  margin: 0 0 10px;
+  font-size: 2rem;
+}
+
+.ugc-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.ugc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ugc-card {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.ugc-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  background: #000;
+}
+
+.ugc-video-vertical {
+  object-fit: contain;
+}
+
+.ugc-card-body {
+  padding: 18px;
+}
+
+.ugc-card-body h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.ugc-card-body p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.ugc-amazon-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #007185;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ugc-amazon-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+
+  .ugc-section {
+    padding: 48px 16px;
+  }
+
+  .ugc-header {
+    margin-bottom: 24px;
+  }
+
+  .ugc-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .ugc-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .ugc-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ugc-card {
+    flex: 0 0 90%;
+    scroll-snap-align: center;
+  }
+
+}
