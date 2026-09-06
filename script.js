@@ -235,14 +235,18 @@ if (
 
     show25Set();
 
-    if (
-      getComputedStyle(mobile25).display !== "none"
-    ) {
-      mobile25.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-    }
+    requestAnimationFrame(() => {
+
+      if (
+        getComputedStyle(mobile25).display !== "none"
+      ) {
+        mobile25.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+
+    });
 
   }
 );
@@ -253,14 +257,18 @@ button50.addEventListener(
 
     show50Set();
 
-    if (
-      getComputedStyle(mobile50).display !== "none"
-    ) {
-      mobile50.scrollIntoView({
-        behavior: "smooth",
-        block: "center"
-      });
-    }
+    requestAnimationFrame(() => {
+
+      if (
+        getComputedStyle(mobile50).display !== "none"
+      ) {
+        mobile50.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+
+    });
 
   }
 );
