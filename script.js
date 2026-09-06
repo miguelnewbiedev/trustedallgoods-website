@@ -230,15 +230,40 @@ if (
 
 
   button25.addEventListener(
-    "click",
-    show25Set
-  );
+  "click",
+  () => {
 
-  button50.addEventListener(
-    "click",
-    show50Set
-  );
+    show25Set();
 
+    if (
+      getComputedStyle(mobile25).display !== "none"
+    ) {
+      mobile25.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+
+  }
+);
+
+button50.addEventListener(
+  "click",
+  () => {
+
+    show50Set();
+
+    if (
+      getComputedStyle(mobile50).display !== "none"
+    ) {
+      mobile50.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }
+
+  }
+);
 
   hotspot25.addEventListener(
     "mouseenter",
