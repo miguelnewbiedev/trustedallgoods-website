@@ -228,8 +228,7 @@ if (
     show50Set
   );
 
-
-  button25.addEventListener(
+button25.addEventListener(
   "click",
   () => {
 
@@ -251,11 +250,54 @@ if (
   }
 );
 
+
 button50.addEventListener(
   "click",
   () => {
 
     show50Set();
+
+    setTimeout(() => {
+
+      if (
+        getComputedStyle(mobile50).display !== "none"
+      ) {
+        mobile50.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+
+    }, 100);
+
+  }
+);
+
+
+  button25.addEventListener(
+  "touchend",
+  () => {
+
+    setTimeout(() => {
+
+      if (
+        getComputedStyle(mobile25).display !== "none"
+      ) {
+        mobile25.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+      }
+
+    }, 100);
+
+  }
+);
+
+
+  button50.addEventListener(
+  "touchend",
+  () => {
 
     setTimeout(() => {
 
@@ -293,6 +335,7 @@ button50.addEventListener(
     "click",
     show50Set
   );
+
 }
 
 
@@ -328,37 +371,38 @@ if (productCarousel) {
 
   function showProductSlide(index) {
 
-  productSlides[
-    currentProductSlide
-  ].classList.remove("active");
+    productSlides[
+      currentProductSlide
+    ].classList.remove("active");
 
-  productDots[
-    currentProductSlide
-  ].classList.remove("active");
-
-
-  currentProductSlide = index;
+    productDots[
+      currentProductSlide
+    ].classList.remove("active");
 
 
-  productSlides[
-    currentProductSlide
-  ].classList.add("active");
-
-  productDots[
-    currentProductSlide
-  ].classList.add("active");
+    currentProductSlide = index;
 
 
-  if (hotspot25 && hotspot50) {
+    productSlides[
+      currentProductSlide
+    ].classList.add("active");
 
-    hotspot25.style.display =
-      index === 0 ? "" : "none";
+    productDots[
+      currentProductSlide
+    ].classList.add("active");
 
-    hotspot50.style.display =
-      index === 0 ? "" : "none";
+
+    if (hotspot25 && hotspot50) {
+
+      hotspot25.style.display =
+        index === 0 ? "" : "none";
+
+      hotspot50.style.display =
+        index === 0 ? "" : "none";
+
+    }
 
   }
-}
 
 
   function showNextProductSlide() {
@@ -405,71 +449,79 @@ if (productCarousel) {
 
     productDots.forEach((dot) => {
 
-  dot.addEventListener("click", () => {
+      dot.addEventListener("click", () => {
 
-    const slideIndex =
-      Number(dot.dataset.slide);
+        const slideIndex =
+          Number(dot.dataset.slide);
 
-    showProductSlide(slideIndex);
-  });
+        showProductSlide(slideIndex);
 
-});
+      });
 
-}
-
-
-/* MOBILE SWIPE GESTURE */
-
-let touchStartX = 0;
-let touchStartY = 0;
-
-productCarousel.addEventListener("touchstart", (event) => {
-
-  touchStartX =
-    event.changedTouches[0].screenX;
-
-  touchStartY =
-    event.changedTouches[0].screenY;
-
-});
-
-
-productCarousel.addEventListener("touchend", (event) => {
-
-  const touchEndX =
-    event.changedTouches[0].screenX;
-
-  const touchEndY =
-    event.changedTouches[0].screenY;
-
-  const horizontalDistance =
-    touchStartX - touchEndX;
-
-  const verticalDistance =
-    touchStartY - touchEndY;
-
-  const minimumSwipeDistance = 50;
-
-
-  if (
-    Math.abs(horizontalDistance) >
-      Math.abs(verticalDistance) &&
-    Math.abs(horizontalDistance) >
-      minimumSwipeDistance
-  ) {
-
-    if (horizontalDistance > 0) {
-
-      showNextProductSlide();
-
-    } else {
-
-      showPreviousProductSlide();
-
-    }
+    });
 
   }
 
-});
+
+  /* MOBILE SWIPE GESTURE */
+
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+
+  productCarousel.addEventListener(
+    "touchstart",
+    (event) => {
+
+      touchStartX =
+        event.changedTouches[0].screenX;
+
+      touchStartY =
+        event.changedTouches[0].screenY;
+
+    }
+  );
+
+
+  productCarousel.addEventListener(
+    "touchend",
+    (event) => {
+
+      const touchEndX =
+        event.changedTouches[0].screenX;
+
+      const touchEndY =
+        event.changedTouches[0].screenY;
+
+      const horizontalDistance =
+        touchStartX - touchEndX;
+
+      const verticalDistance =
+        touchStartY - touchEndY;
+
+      const minimumSwipeDistance = 50;
+
+
+      if (
+        Math.abs(horizontalDistance) >
+          Math.abs(verticalDistance) &&
+        Math.abs(horizontalDistance) >
+          minimumSwipeDistance
+      ) {
+
+        if (horizontalDistance > 0) {
+
+          showNextProductSlide();
+
+        } else {
+
+          showPreviousProductSlide();
+
+        }
+
+      }
+
+    }
+  );
 
 }
