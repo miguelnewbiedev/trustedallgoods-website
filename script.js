@@ -235,7 +235,7 @@ if (
 
     show25Set();
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
 
       if (
         getComputedStyle(mobile25).display !== "none"
@@ -246,7 +246,7 @@ if (
         });
       }
 
-    });
+    }, 100);
 
   }
 );
@@ -257,7 +257,7 @@ button50.addEventListener(
 
     show50Set();
 
-    requestAnimationFrame(() => {
+    setTimeout(() => {
 
       if (
         getComputedStyle(mobile50).display !== "none"
@@ -268,7 +268,7 @@ button50.addEventListener(
         });
       }
 
-    });
+    }, 100);
 
   }
 );
