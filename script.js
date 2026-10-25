@@ -1,122 +1,129 @@
+
 /* ===================================
-   OUR STORY CAROUSEL
+   OUR STORY CAROUSEL 2.0
 =================================== */
 
-const storySlides = document.querySelectorAll(
-  ".brand-story .carousel-slide"
-);
-
-const storyDots = document.querySelectorAll(
-  ".brand-story .dot"
-);
-
-const storyCarousel = document.querySelector(
-  ".brand-story .carousel"
-);
-
-const storyPrevBtn = document.querySelector(
-  ".brand-story .prev"
-);
-
-const storyNextBtn = document.querySelector(
-  ".brand-story .next"
-);
+const storyTrack = document.querySelector(".brand-story .carousel-track");
+const storySlides = document.querySelectorAll(".brand-story .carousel-slide");
+const storyPrevBtn = document.querySelector(".brand-story .carousel-btn.prev");
+const storyNextBtn = document.querySelector(".brand-story .carousel-btn.next");
+const storyDots = document.querySelectorAll(".brand-story .carousel-dot");
 
 let currentStorySlide = 0;
-let storyAutoRotate;
 
+function updateStoryDots(index) {
+  storyDots.forEach((dot, i) => {
+    const isActive = i === index;
+    dot.classList.toggle("active", isActive);
+    dot.setAttribute("aria-current", isActive ? "true" : "false");
+  });
+}
 
 function showStorySlide(index) {
+  const isMobile = window.innerWidth <= 768;
+  const lastPosition = isMobile ? storySlides.length - 1 : 1;
 
-  storySlides.forEach((slide, i) => {
-    slide.classList.toggle("active", i === index);
-  });
+  currentStorySlide = Math.max(0, Math.min(index, lastPosition));
 
-  storyDots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
+  if (isMobile) {
+    storyTrack.classList.remove("story-page-two");
 
-  currentStorySlide = index;
+    const scrollPosition =
+      storySlides[currentStorySlide].offsetLeft -
+      storySlides[0].offsetLeft;
+
+    storyTrack.scrollTo({
+      left: scrollPosition,
+      behavior: "smooth"
+    });
+
+    updateStoryDots(currentStorySlide);
+  } else {
+    const pageTwo = currentStorySlide === 1;
+
+    storyTrack.classList.toggle("story-page-two", pageTwo);
+
+    if (!pageTwo) {
+      storyTrack.scrollTo({
+        left: 0,
+        behavior: "smooth"
+      });
+    } else {
+      const spacer = getComputedStyle(storyTrack, "::before");
+      const transitionDuration =
+        parseFloat(spacer.transitionDuration) * 1000;
+
+      setTimeout(() => {
+        const scrollPosition =
+          storySlides[2].offsetLeft -
+          storySlides[0].offsetLeft;
+
+        storyTrack.scrollTo({
+          left: scrollPosition,
+          behavior: "smooth"
+        });
+      }, transitionDuration);
+    }
+  }
 }
-
-
-function nextStorySlide() {
-
-  const next =
-    (currentStorySlide + 1) % storySlides.length;
-
-  showStorySlide(next);
-}
-
-
-function previousStorySlide() {
-
-  const previous =
-    (currentStorySlide - 1 + storySlides.length) %
-    storySlides.length;
-
-  showStorySlide(previous);
-}
-
-
-function startStoryCarousel() {
-
-  storyAutoRotate =
-    setInterval(nextStorySlide, 5000);
-}
-
-
-function stopStoryCarousel() {
-
-  clearInterval(storyAutoRotate);
-}
-
 
 if (
-  storyCarousel &&
+  storyTrack &&
   storyPrevBtn &&
   storyNextBtn &&
   storySlides.length
 ) {
+  storyNextBtn.addEventListener("click", () => {
+    showStorySlide(currentStorySlide + 1);
+  });
+
+  storyPrevBtn.addEventListener("click", () => {
+    showStorySlide(currentStorySlide - 1);
+  });
 
   storyDots.forEach((dot, index) => {
-
     dot.addEventListener("click", () => {
       showStorySlide(index);
     });
-
   });
 
+  storyTrack.addEventListener("scroll", () => {
+    if (window.innerWidth > 768) return;
 
-  storyPrevBtn.addEventListener(
-    "click",
-    previousStorySlide
-  );
+    let nearestIndex = 0;
+    let nearestDistance = Infinity;
 
+    storySlides.forEach((slide, index) => {
+      const distance = Math.abs(
+        slide.getBoundingClientRect().left -
+        storyTrack.getBoundingClientRect().left -
+        16
+      );
 
-  storyNextBtn.addEventListener(
-    "click",
-    nextStorySlide
-  );
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
+      }
+    });
 
+    currentStorySlide = nearestIndex;
+    updateStoryDots(nearestIndex);
+  });
 
-  storyCarousel.addEventListener(
-    "mouseenter",
-    stopStoryCarousel
-  );
+  window.addEventListener("resize", () => {
+    currentStorySlide = 0;
+    storyTrack.classList.remove("story-page-two");
 
+    storyTrack.scrollTo({
+      left: 0,
+      behavior: "instant"
+    });
 
-  storyCarousel.addEventListener(
-    "mouseleave",
-    startStoryCarousel
-  );
+    updateStoryDots(0);
+  });
 
-
-  showStorySlide(0);
-  startStoryCarousel();
+  updateStoryDots(0);
 }
-
-
 
 /* ===================================
    INTERACTIVE PRODUCT SELECTOR
