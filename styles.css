@@ -859,7 +859,7 @@ body {
     height: auto;
     min-height: 0;
     aspect-ratio: 9 / 16;
-    background-image: url("./images/hero-family-mobile.png");
+    background-image: url("./images/hero-family-mobile.webp");
     background-size: contain;
     background-position: center top;
     background-repeat: no-repeat;
