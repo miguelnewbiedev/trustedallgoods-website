@@ -7,6 +7,18 @@
 
   <title>Trusted All Goods</title>
   <link rel="icon" type="image/png" href="images/trustedallgoods-logo.png">
+  <!-- Prioritize the hero image for each screen size -->
+  <link rel="preload"
+        as="image"
+        href="images/hero-family-mobile.png"
+        media="(max-width: 768px)"
+        fetchpriority="high">
+
+  <link rel="preload"
+        as="image"
+        href="images/hero-family-banner.png"
+        media="(min-width: 768.01px)"
+        fetchpriority="high">
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Google Analytics -->
