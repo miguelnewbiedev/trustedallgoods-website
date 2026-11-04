@@ -1,0 +1,531 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Comparison 3.0 | Trusted All Goods</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f9fb;
+      color: #17212b;
+    }
+
+    .comparison {
+      max-width: 1180px;
+      margin: auto;
+      padding: 36px 20px 72px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+    .section-heading h1 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin: 0 0 10px;
+    }
+
+    .section-heading p {
+      color: #667085;
+      margin: 0;
+    }
+
+    .selector {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .set-button {
+      flex: 1;
+      max-width: 240px;
+      min-height: 75px;
+      padding: 12px;
+      border: 2px solid #d8e1e8;
+      border-radius: 14px;
+      background: white;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .set-button.active {
+    border-color: #2c92cf;
+    background: #eff8ff;
+    box-shadow: 0 4px 14px rgba(44, 146, 207, 0.15);
+    }
+
+    .set-button:not(.active) {
+    border-color: #d8e1e8;
+    background: #ffffff;
+    box-shadow: none;
+    }
+
+    .set-button strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+    .set-button span {
+      font-size: .8rem;
+      color: #667085;
+    }
+
+    .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+    
+
+    .gallery, .product-info {
+      min-width: 0;
+    }
+
+    .main-image {
+      position: relative;
+      background: white;
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 8px 28px #0000000b;
+    }
+
+    .main-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: #fffffff0;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      font-size: 22px;
+      box-shadow: 0 2px 10px #00000020;
+    }
+
+    .gallery-arrow.prev { left: 18px; }
+    .gallery-arrow.next { right: 18px; }
+
+    .thumbnails {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .thumbnail {
+      border: 2px solid transparent;
+      border-radius: 10px;
+      background: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+    .thumbnail.active { border-color: #2c92cf; }
+
+    .thumbnail img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+
+    .product-info h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0 0 12px;
+    }
+
+    .rating {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: .9rem;
+      margin-bottom: 20px;
+    }
+
+    .stars { color: #e7a126; letter-spacing: 2px; }
+
+    .rating a { color: #365a76; }
+
+    .eyebrow {
+      display: inline-block;
+      color: #72512e;
+      background: #f4eadb;
+      border-radius: 20px;
+      padding: 7px 12px;
+      font-size: .78rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .description {
+      color: #526071;
+      line-height: 1.65;
+    }
+
+    .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0;
+    }
+
+    .benefits li {
+      padding: 6px 0;
+      line-height: 1.5;
+    }
+
+    .benefits li::before {
+      content: "✓";
+      color: #238bd1;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    .amazon-button {
+      display: block;
+      text-align: center;
+      background: #111;
+      color: white;
+      border-radius: 30px;
+      padding: 17px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 24px 0;
+    }
+
+    .amazon-button:hover { background: #333; }
+
+    .accordions {
+      border-top: 1px solid #e0e5ea;
+    }
+
+    details {
+      border-bottom: 1px solid #e0e5ea;
+      padding: 17px 0;
+    }
+
+    summary {
+    cursor: pointer;
+    font-weight: bold;
+    list-style-position: inside;
+    padding: 4px 0;
+    }
+
+    details p, details li {
+      color: #526071;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .comparison { padding: 28px 16px 60px; }
+      .product-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .selector { gap: 10px; }
+      .set-button { min-height: 72px; }
+      .set-button strong { font-size: 1.1rem; }
+      .main-image { padding: 8px; }
+      .product-info h2 { font-size: 1.55rem; }
+    }
+
+    #productEyebrow {
+       scroll-margin-top: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="comparison" id="product-comparison">
+    <header class="section-heading">
+      <h1>32 oz Deli Containers with Lids</h1>
+      <p>Choose the Set That Fits Your Kitchen</p>
+    </header>
+
+    <div class="selector" aria-label="Choose container set">
+      <button class="set-button active" id="button25"
+              type="button" aria-pressed="true">
+        <strong>25 Set</strong>
+        <span>Weekly meal prep</span>
+      </button>
+
+      <button class="set-button" id="button50"
+              type="button" aria-pressed="false">
+        <strong>50 Set</strong>
+        <span>Families &amp; bulk storage</span>
+      </button>
+    </div>
+
+    <div class="product-layout">
+      <div class="gallery">
+        <div class="main-image" id="galleryTouchArea">
+          <img id="mainProductImage"
+               src="images/product-selector-main.webp"
+               alt="Trusted All Goods deli container product gallery">
+
+          <button class="gallery-arrow prev" id="prevImage"
+                  type="button" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow next" id="nextImage"
+                  type="button" aria-label="Next image">›</button>
+        </div>
+
+        <div class="thumbnails" id="thumbnails"
+             aria-label="Product image thumbnails"></div>
+      </div>
+
+      <div class="product-info">
+        <span class="eyebrow" id="productEyebrow">
+          Best for Weekly Meal Prep
+        </span>
+
+        <h2 id="productTitle">25 Set — 32 oz Deli Containers</h2>
+
+        <div class="rating">
+          <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+          <span>4.8 out of 5</span>
+          <a href="https://www.amazon.com/product-reviews/B0D96RF93M"
+             id="reviewsLink" target="_blank"
+             rel="noopener noreferrer">213 Amazon reviews</a>
+        </div>
+
+        <p class="description" id="productDescription">
+          A practical starter option for everyday meals,
+          leftovers, and smaller households.
+        </p>
+
+        <ul class="benefits" id="productBenefits"></ul>
+
+        <a class="amazon-button" id="amazonButton"
+           href="https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&amp;ref_=aa_maas&amp;tag=maas"
+           target="_blank" rel="noopener noreferrer">
+          Shop 25 Set on Amazon
+        </a>
+
+        <div class="accordions">
+          <details>
+            <summary>Features</summary>
+            <ul>
+              <li>Reusable 32 oz food storage containers</li>
+              <li>Stackable design for everyday organization</li>
+              <li>Suitable for meal preparation and leftovers</li>
+            </ul>
+          </details>
+
+          <details>
+            <summary>Product Details</summary>
+            <p>Capacity: 32 US fluid ounces per container.</p>
+          </details>
+
+          <details>
+            <summary>What's Included</summary>
+            <p id="includedContent">25 containers and 28 waterproof labels.</p>
+          </details>
+
+          <details>
+            <summary>Care &amp; Use</summary>
+            <p>
+              Follow the product's care instructions for microwave,
+              freezer, and dishwasher use.
+            </p>
+          </details>
+
+          <details>
+            <summary>Customer Reviews</summary>
+            <p>
+              Read verified customer feedback on Amazon.
+              <a id="accordionReviewsLink"
+                 href="https://www.amazon.com/product-reviews/B0D96RF93M"
+                 target="_blank" rel="noopener noreferrer">
+                View Amazon reviews
+              </a>
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const images = [
+    "images/product-selector-main.webp",
+    "images/product-image-02.webp",
+    "images/product-image-03.webp",
+    "images/product-image-04.webp"
+    ];
+
+    const products = {
+      25: {
+        title: "25 Set — 32 oz Deli Containers",
+        eyebrow: "Best for Weekly Meal Prep",
+        description:
+          "A practical starter option for everyday meals, leftovers, and smaller households.",
+        benefits: [
+          "25 reusable 32 oz containers",
+          "28 waterproof labels",
+          "Easy everyday storage",
+          "Ideal for smaller households"
+        ],
+        included: "25 containers and 28 waterproof labels.",
+        amazonUrl:
+          "https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&ref_=aa_maas&tag=maas",
+        reviewsUrl:
+          "https://www.amazon.com/product-reviews/B0D96RF93M"
+      },
+      50: {
+        title: "50 Set — 32 oz Deli Containers",
+        eyebrow: "Best for Families & Bulk Storage",
+        description:
+          "A larger option for families, restaurants, bulk storage, and high-volume kitchen use.",
+        benefits: [
+          "50 reusable 32 oz containers",
+          "56 waterproof labels",
+          "Great for bulk food storage",
+          "Best value per container"
+        ],
+        included: "50 containers and 56 waterproof labels.",
+        amazonUrl:
+          "https://www.amazon.com/dp/B0CK5H19VG?maas=maas_adg_9DBB0D6C2F54A756518C25DAF8F27591_afap_abs&ref_=aa_maas&tag=maas",
+        reviewsUrl:
+          "https://www.amazon.com/product-reviews/B0CK5H19VG"
+      }
+    };
+
+    let selectedSet = 25;
+    let currentImage = 0;
+
+    const mainImage = document.getElementById("mainProductImage");
+    const thumbnailContainer = document.getElementById("thumbnails");
+
+    function showImage(index) {
+      currentImage = (index + images.length) % images.length;
+      mainImage.src = images[currentImage];
+      mainImage.alt =
+        "Trusted All Goods deli containers — product image " +
+        (currentImage + 1);
+
+      document.querySelectorAll(".thumbnail").forEach((button, i) => {
+        button.classList.toggle("active", i === currentImage);
+        button.setAttribute("aria-pressed", String(i === currentImage));
+      });
+    }
+
+    images.forEach((src, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "thumbnail";
+      button.setAttribute("aria-label", "View product image " + (index + 1));
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "";
+      img.loading = "lazy";
+
+      button.appendChild(img);
+      button.addEventListener("click", () => showImage(index));
+      thumbnailContainer.appendChild(button);
+    });
+
+    function selectSet(set) {
+      selectedSet = set;
+      const product = products[set];
+
+    document.getElementById("button25")
+        .classList.toggle("active", set === 25);
+
+    document.getElementById("button50")
+        .classList.toggle("active", set === 50);
+
+      document.getElementById("button25")
+        .setAttribute("aria-pressed", String(set === 25));
+      document.getElementById("button50")
+        .setAttribute("aria-pressed", String(set === 50));
+
+      document.getElementById("productTitle").textContent = product.title;
+      document.getElementById("productEyebrow").textContent = product.eyebrow;
+      document.getElementById("productDescription").textContent =
+        product.description;
+      document.getElementById("includedContent").textContent =
+        product.included;
+
+      const benefits = document.getElementById("productBenefits");
+      benefits.replaceChildren();
+
+      product.benefits.forEach(text => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        benefits.appendChild(li);
+      });
+
+      const amazonButton = document.getElementById("amazonButton");
+      amazonButton.href = product.amazonUrl;
+      amazonButton.textContent = "Shop " + set + " Set on Amazon";
+
+      document.getElementById("reviewsLink").href = product.reviewsUrl;
+      document.getElementById("accordionReviewsLink").href =
+        product.reviewsUrl;
+    }
+
+    function selectSetAndScroll(set) {
+        selectSet(set);
+
+    document.getElementById("productEyebrow")
+       .scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+}
+
+document.getElementById("button25")
+  .addEventListener("click", () => selectSetAndScroll(25));
+
+document.getElementById("button50")
+  .addEventListener("click", () => selectSetAndScroll(50));
+
+    document.getElementById("prevImage")
+      .addEventListener("click", () => showImage(currentImage - 1));
+    document.getElementById("nextImage")
+      .addEventListener("click", () => showImage(currentImage + 1));
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    document.getElementById("galleryTouchArea")
+      .addEventListener("touchstart", event => {
+        touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
+      }, { passive: true });
+
+    document.getElementById("galleryTouchArea")
+      .addEventListener("touchend", event => {
+        const deltaX = touchStartX - event.changedTouches[0].screenX;
+        const deltaY = touchStartY - event.changedTouches[0].screenY;
+
+        if (Math.abs(deltaX) > 50 &&
+            Math.abs(deltaX) > Math.abs(deltaY)) {
+          showImage(currentImage + (deltaX > 0 ? 1 : -1));
+        }
+      }, { passive: true });
+
+    selectSet(25);
+    showImage(0);
+  </script>
+</body>
+</html>
