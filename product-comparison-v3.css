@@ -1,0 +1,248 @@
+/* Product Comparison 3.0 */
+
+.product-comparison-v3 {
+      max-width: 1180px;
+      margin: auto;
+      padding: 36px 20px 72px;
+    }
+
+.product-comparison-v3 .section-heading {
+      text-align: center;
+      margin-bottom: 26px;
+    }
+
+.product-comparison-v3 .section-heading h1 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin: 0 0 10px;
+    }
+
+.product-comparison-v3 .section-heading p {
+      color: #667085;
+      margin: 0;
+    }
+
+.product-comparison-v3 .selector {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+.product-comparison-v3 .set-button {
+      flex: 1;
+      max-width: 240px;
+      min-height: 75px;
+      padding: 12px;
+      border: 2px solid #d8e1e8;
+      border-radius: 14px;
+      background: white;
+      cursor: pointer;
+      font: inherit;
+    }
+
+.product-comparison-v3 .set-button.active {
+    border-color: #2c92cf;
+    background: #eff8ff;
+    box-shadow: 0 4px 14px rgba(44, 146, 207, 0.15);
+    }
+
+.product-comparison-v3 .set-button:not(.active) {
+    border-color: #d8e1e8;
+    background: #ffffff;
+    box-shadow: none;
+    }
+
+.product-comparison-v3 .set-button strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+    }
+
+.product-comparison-v3 .set-button span {
+      font-size: .8rem;
+      color: #667085;
+    }
+
+.product-comparison-v3 .product-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+.product-comparison-v3 .gallery, .product-comparison-v3 .product-info {
+      min-width: 0;
+    }
+
+.product-comparison-v3 .main-image {
+      position: relative;
+      background: white;
+      border-radius: 18px;
+      padding: 12px;
+      box-shadow: 0 8px 28px #0000000b;
+    }
+
+.product-comparison-v3 .main-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+.product-comparison-v3 .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 0;
+      background: #fffffff0;
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      font-size: 22px;
+      box-shadow: 0 2px 10px #00000020;
+    }
+
+.product-comparison-v3 .gallery-arrow.prev { left: 18px; }
+
+.product-comparison-v3 .gallery-arrow.next { right: 18px; }
+
+.product-comparison-v3 .thumbnails {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+.product-comparison-v3 .thumbnail {
+      border: 2px solid transparent;
+      border-radius: 10px;
+      background: white;
+      padding: 5px;
+      cursor: pointer;
+    }
+
+.product-comparison-v3 .thumbnail.active { border-color: #2c92cf; }
+
+.product-comparison-v3 .thumbnail img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+
+.product-comparison-v3 .product-info h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin: 0 0 12px;
+    }
+
+.product-comparison-v3 .rating {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: .9rem;
+      margin-bottom: 20px;
+    }
+
+.product-comparison-v3 .stars { color: #e7a126; letter-spacing: 2px; }
+
+.product-comparison-v3 .rating a { color: #365a76; }
+
+.product-comparison-v3 .eyebrow {
+      display: inline-block;
+      color: #72512e;
+      background: #f4eadb;
+      border-radius: 20px;
+      padding: 7px 12px;
+      font-size: .78rem;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+.product-comparison-v3 .description {
+      color: #526071;
+      line-height: 1.65;
+    }
+
+.product-comparison-v3 .benefits {
+      list-style: none;
+      padding: 0;
+      margin: 22px 0;
+    }
+
+.product-comparison-v3 .benefits li {
+      padding: 6px 0;
+      line-height: 1.5;
+    }
+
+.product-comparison-v3 .benefits li::before {
+      content: "✓";
+      color: #238bd1;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+.product-comparison-v3 .amazon-button {
+      display: block;
+      text-align: center;
+      background: #111;
+      color: white;
+      border-radius: 30px;
+      padding: 17px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 24px 0;
+    }
+
+.product-comparison-v3 .amazon-button:hover { background: #333; }
+
+.product-comparison-v3 .accordions {
+      border-top: 1px solid #e0e5ea;
+    }
+
+.product-comparison-v3 details {
+      border-bottom: 1px solid #e0e5ea;
+      padding: 17px 0;
+    }
+
+.product-comparison-v3 summary {
+    cursor: pointer;
+    font-weight: bold;
+    list-style-position: inside;
+    padding: 4px 0;
+    }
+
+.product-comparison-v3 details p, .product-comparison-v3 details li {
+      color: #526071;
+      line-height: 1.6;
+    }
+
+@media (max-width: 768px) {
+.product-comparison-v3 { padding: 28px 16px 60px; }
+
+.product-comparison-v3 .product-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+.product-comparison-v3 .selector { gap: 10px; }
+
+.product-comparison-v3 .set-button { min-height: 72px; }
+
+.product-comparison-v3 .set-button strong { font-size: 1.1rem; }
+
+.product-comparison-v3 .main-image { padding: 8px; }
+
+.product-comparison-v3 .product-info h2 { font-size: 1.55rem; }
+
+
+    
+}
+
+.product-comparison-v3 #productEyebrow {
+       scroll-margin-top: 24px;
+    }
+
+
+  

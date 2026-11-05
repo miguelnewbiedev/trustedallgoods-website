@@ -20,6 +20,7 @@
         media="(min-width: 768.01px)"
         fetchpriority="high">
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="product-comparison-v3.css" />
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY913LLELT"></script>
@@ -123,429 +124,115 @@
   </section>
 
 
-  <!-- =========================
-       PRODUCT SELECTOR
-  ========================== -->
+  <!-- PRODUCT COMPARISON 3.0 -->
+<main class="comparison product-comparison-v3" id="product-comparison">
+    <header class="section-heading">
+      <h1>32 oz Deli Containers with Lids</h1>
+      <p>Choose the Set That Fits Your Kitchen</p>
+    </header>
 
-  <section
-    class="product-comparison"
-    id="product-comparison"
-  >
-
-    <div class="section-header">
-
-      <h2>
-        32 oz Deli Containers with Lids
-      </h2>
-
-      <p>
-        Choose the Set That Fits Your Kitchen
-      </p>
-
-    </div>
-
-
-    <!-- SET SELECTOR BUTTONS -->
-
-    <div class="selector-buttons">
-
-      <button
-        type="button"
-        class="set-button"
-        id="button25"
-        aria-expanded="false"
-      >
-
-        <span class="set-number">
-          25 Set
-        </span>
-
-        <span class="set-label">
-          Weekly meal prep
-        </span>
-
+    <div class="selector" aria-label="Choose container set">
+      <button class="set-button active" id="button25"
+              type="button" aria-pressed="true">
+        <strong>25 Set</strong>
+        <span>Weekly meal prep</span>
       </button>
 
-
-      <button
-        type="button"
-        class="set-button"
-        id="button50"
-        aria-expanded="false"
-      >
-
-        <span class="set-number">
-          50 Set
-        </span>
-
-        <span class="set-label">
-          Families & bulk storage
-        </span>
-
+      <button class="set-button" id="button50"
+              type="button" aria-pressed="false">
+        <strong>50 Set</strong>
+        <span>Families &amp; bulk storage</span>
       </button>
-
     </div>
 
+    <div class="product-layout">
+      <div class="gallery">
+        <div class="main-image" id="galleryTouchArea">
+          <img id="mainProductImage"
+               src="images/product-selector-main.webp"
+               alt="Trusted All Goods deli container product gallery">
 
-    <div class="desktop-selector">
-
-
-      <!-- =========================
-           25 SET DETAILS
-      ========================== -->
-
-      <aside
-        class="side-panel"
-        id="leftPanel"
-      >
-
-        <div class="details-card">
-
-          <span class="eyebrow">
-            Best for Weekly Meal Prep
-          </span>
-
-          <h2>
-            25 Set
-          </h2>
-
-          <p>
-            A practical starter option for everyday meals,
-            leftovers, and smaller households.
-          </p>
-
-          <ul>
-            <li>25 reusable 32 oz containers</li>
-            <li>28 waterproof labels</li>
-            <li>Easy everyday storage</li>
-            <li>Ideal for smaller households</li>
-          </ul>
-
-          <a
-            href="https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&ref_=aa_maas&tag=maas"
-            target="_blank"
-            class="shop-button"
-            onclick="trackAmazonClick('Shop 25 Set')"
-          >
-            Shop 25 Set
-          </a>
-
+          <button class="gallery-arrow prev" id="prevImage"
+                  type="button" aria-label="Previous image">‹</button>
+          <button class="gallery-arrow next" id="nextImage"
+                  type="button" aria-label="Next image">›</button>
         </div>
 
-      </aside>
+        <div class="thumbnails" id="thumbnails"
+             aria-label="Product image thumbnails"></div>
+      </div>
 
+      <div class="product-info">
+        <span class="eyebrow" id="productEyebrow">
+          Best for Weekly Meal Prep
+        </span>
 
-      <!-- =========================
-           PRODUCT IMAGE CAROUSEL
-      ========================== -->
+        <h2 id="productTitle">25 Set — 32 oz Deli Containers</h2>
 
-      <div class="product-stage">
-
-        <div
-          class="product-carousel"
-          id="productCarousel"
-        >
-
-
-          <!-- CAROUSEL IMAGES -->
-
-          <div class="carousel-track">
-
-
-            <!-- IMAGE 1 -->
-
-            <div class="product-carousel-slide active">
-
-              <img
-                src="images/product-selector-main.png"
-                alt="Trusted All Goods 25 and 50 set deli container options"
-              />
-
-
-              <!-- 25 SET HOTSPOT -->
-
-              <button
-                type="button"
-                class="image-hotspot hotspot-25"
-                id="hotspot25"
-                aria-label="View 25 set details"
-              ></button>
-
-
-              <!-- 50 SET HOTSPOT -->
-
-              <button
-                type="button"
-                class="image-hotspot hotspot-50"
-                id="hotspot50"
-                aria-label="View 50 set details"
-              ></button>
-
-            </div>
-
-
-            <!-- IMAGE 2 -->
-
-            <div class="product-carousel-slide">
-
-              <img
-                src="images/product-image-02.png"
-                alt="Trusted All Goods deli container product image 2"
-              />
-
-            </div>
-
-
-            <!-- IMAGE 3 -->
-
-            <div class="product-carousel-slide">
-
-              <img
-                src="images/product-image-03.png"
-                alt="Trusted All Goods deli container product image 3"
-              />
-
-            </div>
-
-
-            <!-- IMAGE 4 -->
-
-            <div class="product-carousel-slide">
-
-              <img
-                src="images/product-image-04.png"
-                alt="Trusted All Goods deli container product image 4"
-              />
-
-            </div>
-
-          </div>
-
-
-          <!-- PREVIOUS IMAGE -->
-
-          <button
-            type="button"
-            class="carousel-arrow carousel-arrow-left"
-            id="carouselPrev"
-            aria-label="Previous product image"
-          >
-            &#10094;
-          </button>
-
-
-          <!-- NEXT IMAGE -->
-
-          <button
-            type="button"
-            class="carousel-arrow carousel-arrow-right"
-            id="carouselNext"
-            aria-label="Next product image"
-          >
-            &#10095;
-          </button>
-
-
-          <!-- PRODUCT CAROUSEL DOTS -->
-
-          <div
-            class="product-carousel-dots"
-            aria-label="Product image navigation"
-          >
-
-            <button
-              type="button"
-              class="carousel-dot active"
-              data-slide="0"
-              aria-label="View product image 1"
-            ></button>
-
-            <button
-              type="button"
-              class="carousel-dot"
-              data-slide="1"
-              aria-label="View product image 2"
-            ></button>
-
-            <button
-              type="button"
-              class="carousel-dot"
-              data-slide="2"
-              aria-label="View product image 3"
-            ></button>
-
-            <button
-              type="button"
-              class="carousel-dot"
-              data-slide="3"
-              aria-label="View product image 4"
-            ></button>
-
-          </div>
-
+        <div class="rating">
+          <span class="stars" aria-label="4.8 out of 5 stars">★★★★★</span>
+          <span>4.8 out of 5</span>
+          <a href="https://www.amazon.com/product-reviews/B0D96RF93M"
+             id="reviewsLink" target="_blank"
+             rel="noopener noreferrer">213 Amazon reviews</a>
         </div>
-<a
-          href="https://www.amazon.com/product-reviews/B0D96RF93M"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="amazon-social-proof"
-          aria-label="Read Trusted All Goods customer reviews on Amazon"
-        >
-          <div class="amazon-rating-row">
-            <span class="amazon-stars" aria-hidden="true">★★★★★</span>
 
-            <span class="amazon-score">
-              4.8 out of 5
-            </span>
-          </div>
+        <p class="description" id="productDescription">
+          A practical starter option for everyday meals,
+          leftovers, and smaller households.
+        </p>
 
-          <div class="amazon-review-row">
-            <span class="amazon-rating-count">
-              209 Amazon ratings
-            </span>
+        <ul class="benefits" id="productBenefits"></ul>
 
-            <span class="amazon-review-divider" aria-hidden="true">•</span>
-
-            <span class="amazon-reviews-link">
-              Read customer reviews →
-            </span>
-          </div>
+        <a class="amazon-button" id="amazonButton" onclick="trackAmazonClick(this.textContent.trim())"
+           href="https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&amp;ref_=aa_maas&amp;tag=maas"
+           target="_blank" rel="noopener noreferrer">
+          Shop 25 Set on Amazon
         </a>
-      </div>
 
+        <div class="accordions">
+          <details>
+            <summary>Features</summary>
+            <ul>
+              <li>Reusable 32 oz food storage containers</li>
+              <li>Stackable design for everyday organization</li>
+              <li>Suitable for meal preparation and leftovers</li>
+            </ul>
+          </details>
 
-      <!-- =========================
-           50 SET DETAILS
-      ========================== -->
+          <details>
+            <summary>Product Details</summary>
+            <p>Capacity: 32 US fluid ounces per container.</p>
+          </details>
 
-      <aside
-        class="side-panel"
-        id="rightPanel"
-      >
+          <details>
+            <summary>What's Included</summary>
+            <p id="includedContent">25 containers and 28 waterproof labels.</p>
+          </details>
 
-        <div class="details-card">
+          <details>
+            <summary>Care &amp; Use</summary>
+            <p>
+              Follow the product's care instructions for microwave,
+              freezer, and dishwasher use.
+            </p>
+          </details>
 
-          <span class="eyebrow">
-            Best for Families & Bulk Storage
-          </span>
-
-          <h2>
-            50 Set
-          </h2>
-
-          <p>
-            A larger option for families, restaurants,
-            bulk storage, and high-volume kitchen use.
-          </p>
-
-          <ul>
-            <li>50 reusable 32 oz containers</li>
-            <li>56 waterproof labels</li>
-            <li>Great for bulk food storage</li>
-            <li>Best value per container</li>
-          </ul>
-
-          <a
-            href="https://www.amazon.com/dp/B0CK5H19VG?maas=maas_adg_9DBB0D6C2F54A756518C25DAF8F27591_afap_abs&ref_=aa_maas&tag=maas"
-            target="_blank"
-            class="shop-button"
-            onclick="trackAmazonClick('Shop 50 Set')"
-          >
-            Shop 50 Set
-          </a>
-
+          <details>
+            <summary>Customer Reviews</summary>
+            <p>
+              Read verified customer feedback on Amazon.
+              <a id="accordionReviewsLink"
+                 href="https://www.amazon.com/product-reviews/B0D96RF93M"
+                 target="_blank" rel="noopener noreferrer">
+                View Amazon reviews
+              </a>
+            </p>
+          </details>
         </div>
-
-      </aside>
-
-
-      <!-- =========================
-           MOBILE DETAILS
-      ========================== -->
-
-      <div class="mobile-details">
-
-
-        <!-- MOBILE 25 SET -->
-
-        <article
-          class="mobile-panel"
-          id="mobile25"
-        >
-
-          <div class="details-card">
-
-            <span class="eyebrow">
-              Best for Weekly Meal Prep
-            </span>
-
-            <h2>
-              25 Set
-            </h2>
-
-            <ul>
-              <li>25 reusable 32 oz containers</li>
-              <li>28 waterproof labels</li>
-              <li>Easy everyday storage</li>
-              <li>Ideal for smaller households</li>
-            </ul>
-
-            <a
-              href="https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&ref_=aa_maas&tag=maas"
-              target="_blank"
-              class="shop-button"
-              onclick="trackAmazonClick('Shop 25 Set Mobile')"
-            >
-              Shop 25 Set
-            </a>
-
-          </div>
-
-        </article>
-
-
-        <!-- MOBILE 50 SET -->
-
-        <article
-          class="mobile-panel"
-          id="mobile50"
-        >
-
-          <div class="details-card">
-
-            <span class="eyebrow">
-              Best for Families & Bulk Storage
-            </span>
-
-            <h2>
-              50 Set
-            </h2>
-
-            <ul>
-              <li>50 reusable 32 oz containers</li>
-              <li>56 waterproof labels</li>
-              <li>Great for bulk food storage</li>
-              <li>Best value per container</li>
-            </ul>
-
-            <a
-              href="https://www.amazon.com/dp/B0CK5H19VG?maas=maas_adg_9DBB0D6C2F54A756518C25DAF8F27591_afap_abs&ref_=aa_maas&tag=maas"
-              target="_blank"
-              class="shop-button"
-              onclick="trackAmazonClick('Shop 50 Set Mobile')"
-            >
-              Shop 50 Set
-            </a>
-
-          </div>
-
-        </article>
-
       </div>
-
     </div>
-
-  </section>
+  </main>
 
   <!-- =========================
        TRUST SECTION

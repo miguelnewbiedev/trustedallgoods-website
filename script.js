@@ -125,410 +125,167 @@ if (
   updateStoryDots(0);
 }
 
-/* ===================================
-   INTERACTIVE PRODUCT SELECTOR
-=================================== */
+/* PRODUCT COMPARISON 3.0 */
 
-const button25 =
-  document.getElementById("button25");
+const images = [
+    "images/product-selector-main.webp",
+    "images/product-image-02.webp",
+    "images/product-image-03.webp",
+    "images/product-image-04.webp"
+    ];
 
-const button50 =
-  document.getElementById("button50");
-
-const hotspot25 =
-  document.getElementById("hotspot25");
-
-const hotspot50 =
-  document.getElementById("hotspot50");
-
-const leftPanel =
-  document.getElementById("leftPanel");
-
-const rightPanel =
-  document.getElementById("rightPanel");
-
-const mobile25 =
-  document.getElementById("mobile25");
-
-const mobile50 =
-  document.getElementById("mobile50");
-
-
-function clearProductSelector() {
-
-  button25.classList.remove("active");
-  button50.classList.remove("active");
-
-  hotspot25.classList.remove("active");
-  hotspot50.classList.remove("active");
-
-  leftPanel.classList.remove("active");
-  rightPanel.classList.remove("active");
-
-  mobile25.classList.remove("active");
-  mobile50.classList.remove("active");
-
-  button25.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-
-  button50.setAttribute(
-    "aria-expanded",
-    "false"
-  );
-}
-
-
-function show25Set() {
-
-  clearProductSelector();
-
-  button25.classList.add("active");
-  hotspot25.classList.add("active");
-
-  leftPanel.classList.add("active");
-  mobile25.classList.add("active");
-
-  button25.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-}
-
-
-function show50Set() {
-
-  clearProductSelector();
-
-  button50.classList.add("active");
-  hotspot50.classList.add("active");
-
-  rightPanel.classList.add("active");
-  mobile50.classList.add("active");
-
-  button50.setAttribute(
-    "aria-expanded",
-    "true"
-  );
-}
-
-
-if (
-  button25 &&
-  button50 &&
-  hotspot25 &&
-  hotspot50 &&
-  leftPanel &&
-  rightPanel &&
-  mobile25 &&
-  mobile50
-) {
-
-  button25.addEventListener(
-    "mouseenter",
-    show25Set
-  );
-
-  button50.addEventListener(
-    "mouseenter",
-    show50Set
-  );
-
-button25.addEventListener(
-  "click",
-  () => {
-
-    show25Set();
-
-    setTimeout(() => {
-
-      if (
-        getComputedStyle(mobile25).display !== "none"
-      ) {
-        mobile25.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
+    const products = {
+      25: {
+        title: "25 Set — 32 oz Deli Containers",
+        eyebrow: "Best for Weekly Meal Prep",
+        description:
+          "A practical starter option for everyday meals, leftovers, and smaller households.",
+        benefits: [
+          "25 reusable 32 oz containers",
+          "28 waterproof labels",
+          "Easy everyday storage",
+          "Ideal for smaller households"
+        ],
+        included: "25 containers and 28 waterproof labels.",
+        amazonUrl:
+          "https://www.amazon.com/dp/B0D96RF93M?maas=maas_adg_4EDBFC688FF0E85F17769658A200C814_afap_abs&ref_=aa_maas&tag=maas",
+        reviewsUrl:
+          "https://www.amazon.com/product-reviews/B0D96RF93M"
+      },
+      50: {
+        title: "50 Set — 32 oz Deli Containers",
+        eyebrow: "Best for Families & Bulk Storage",
+        description:
+          "A larger option for families, restaurants, bulk storage, and high-volume kitchen use.",
+        benefits: [
+          "50 reusable 32 oz containers",
+          "56 waterproof labels",
+          "Great for bulk food storage",
+          "Best value per container"
+        ],
+        included: "50 containers and 56 waterproof labels.",
+        amazonUrl:
+          "https://www.amazon.com/dp/B0CK5H19VG?maas=maas_adg_9DBB0D6C2F54A756518C25DAF8F27591_afap_abs&ref_=aa_maas&tag=maas",
+        reviewsUrl:
+          "https://www.amazon.com/product-reviews/B0CK5H19VG"
       }
+    };
 
-    }, 100);
+    let selectedSet = 25;
+    let currentImage = 0;
 
-  }
-);
+    const mainImage = document.getElementById("mainProductImage");
+    const thumbnailContainer = document.getElementById("thumbnails");
 
+    function showImage(index) {
+      currentImage = (index + images.length) % images.length;
+      mainImage.src = images[currentImage];
+      mainImage.alt =
+        "Trusted All Goods deli containers — product image " +
+        (currentImage + 1);
 
-button50.addEventListener(
-  "click",
-  () => {
-
-    show50Set();
-
-    setTimeout(() => {
-
-      if (
-        getComputedStyle(mobile50).display !== "none"
-      ) {
-        mobile50.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }
-
-    }, 100);
-
-  }
-);
-
-
-  button25.addEventListener(
-  "touchend",
-  () => {
-
-    setTimeout(() => {
-
-      if (
-        getComputedStyle(mobile25).display !== "none"
-      ) {
-        mobile25.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }
-
-    }, 100);
-
-  }
-);
-
-
-  button50.addEventListener(
-  "touchend",
-  () => {
-
-    setTimeout(() => {
-
-      if (
-        getComputedStyle(mobile50).display !== "none"
-      ) {
-        mobile50.scrollIntoView({
-          behavior: "smooth",
-          block: "center"
-        });
-      }
-
-    }, 100);
-
-  }
-);
-
-  hotspot25.addEventListener(
-    "mouseenter",
-    show25Set
-  );
-
-  hotspot50.addEventListener(
-    "mouseenter",
-    show50Set
-  );
-
-
-  hotspot25.addEventListener(
-    "click",
-    show25Set
-  );
-
-  hotspot50.addEventListener(
-    "click",
-    show50Set
-  );
-
-}
-
-
-
-/* ===================================
-   PRODUCT IMAGE CAROUSEL
-=================================== */
-
-const productCarousel =
-  document.getElementById("productCarousel");
-
-
-if (productCarousel) {
-
-  const productSlides =
-    productCarousel.querySelectorAll(
-      ".product-carousel-slide"
-    );
-
-  const productDots =
-    productCarousel.querySelectorAll(
-      ".carousel-dot"
-    );
-
-  const productPrevButton =
-    document.getElementById("carouselPrev");
-
-  const productNextButton =
-    document.getElementById("carouselNext");
-
-  let currentProductSlide = 0;
-
-
-  function showProductSlide(index) {
-
-    productSlides[
-      currentProductSlide
-    ].classList.remove("active");
-
-    productDots[
-      currentProductSlide
-    ].classList.remove("active");
-
-
-    currentProductSlide = index;
-
-
-    productSlides[
-      currentProductSlide
-    ].classList.add("active");
-
-    productDots[
-      currentProductSlide
-    ].classList.add("active");
-
-
-    if (hotspot25 && hotspot50) {
-
-      hotspot25.style.display =
-        index === 0 ? "" : "none";
-
-      hotspot50.style.display =
-        index === 0 ? "" : "none";
-
+      document.querySelectorAll(".thumbnail").forEach((button, i) => {
+        button.classList.toggle("active", i === currentImage);
+        button.setAttribute("aria-pressed", String(i === currentImage));
+      });
     }
 
-  }
+    images.forEach((src, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "thumbnail";
+      button.setAttribute("aria-label", "View product image " + (index + 1));
 
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "";
+      img.loading = "lazy";
 
-  function showNextProductSlide() {
-
-    const nextSlide =
-      (currentProductSlide + 1) %
-      productSlides.length;
-
-    showProductSlide(nextSlide);
-  }
-
-
-  function showPreviousProductSlide() {
-
-    const previousSlide =
-      (
-        currentProductSlide -
-        1 +
-        productSlides.length
-      ) %
-      productSlides.length;
-
-    showProductSlide(previousSlide);
-  }
-
-
-  if (
-    productPrevButton &&
-    productNextButton &&
-    productSlides.length &&
-    productDots.length
-  ) {
-
-    productNextButton.addEventListener(
-      "click",
-      showNextProductSlide
-    );
-
-    productPrevButton.addEventListener(
-      "click",
-      showPreviousProductSlide
-    );
-
-
-    productDots.forEach((dot) => {
-
-      dot.addEventListener("click", () => {
-
-        const slideIndex =
-          Number(dot.dataset.slide);
-
-        showProductSlide(slideIndex);
-
-      });
-
+      button.appendChild(img);
+      button.addEventListener("click", () => showImage(index));
+      thumbnailContainer.appendChild(button);
     });
 
-  }
+    function selectSet(set) {
+      selectedSet = set;
+      const product = products[set];
 
+    document.getElementById("button25")
+        .classList.toggle("active", set === 25);
 
-  /* MOBILE SWIPE GESTURE */
+    document.getElementById("button50")
+        .classList.toggle("active", set === 50);
 
-  let touchStartX = 0;
-  let touchStartY = 0;
+      document.getElementById("button25")
+        .setAttribute("aria-pressed", String(set === 25));
+      document.getElementById("button50")
+        .setAttribute("aria-pressed", String(set === 50));
 
+      document.getElementById("productTitle").textContent = product.title;
+      document.getElementById("productEyebrow").textContent = product.eyebrow;
+      document.getElementById("productDescription").textContent =
+        product.description;
+      document.getElementById("includedContent").textContent =
+        product.included;
 
-  productCarousel.addEventListener(
-    "touchstart",
-    (event) => {
+      const benefits = document.getElementById("productBenefits");
+      benefits.replaceChildren();
 
-      touchStartX =
-        event.changedTouches[0].screenX;
+      product.benefits.forEach(text => {
+        const li = document.createElement("li");
+        li.textContent = text;
+        benefits.appendChild(li);
+      });
 
-      touchStartY =
-        event.changedTouches[0].screenY;
+      const amazonButton = document.getElementById("amazonButton");
+      amazonButton.href = product.amazonUrl;
+      amazonButton.textContent = "Shop " + set + " Set on Amazon";
 
+      document.getElementById("reviewsLink").href = product.reviewsUrl;
+      document.getElementById("accordionReviewsLink").href =
+        product.reviewsUrl;
     }
-  );
 
+    function selectSetAndScroll(set) {
+        selectSet(set);
 
-  productCarousel.addEventListener(
-    "touchend",
-    (event) => {
-
-      const touchEndX =
-        event.changedTouches[0].screenX;
-
-      const touchEndY =
-        event.changedTouches[0].screenY;
-
-      const horizontalDistance =
-        touchStartX - touchEndX;
-
-      const verticalDistance =
-        touchStartY - touchEndY;
-
-      const minimumSwipeDistance = 50;
-
-
-      if (
-        Math.abs(horizontalDistance) >
-          Math.abs(verticalDistance) &&
-        Math.abs(horizontalDistance) >
-          minimumSwipeDistance
-      ) {
-
-        if (horizontalDistance > 0) {
-
-          showNextProductSlide();
-
-        } else {
-
-          showPreviousProductSlide();
-
-        }
-
-      }
-
-    }
-  );
-
+    document.getElementById("productEyebrow")
+       .scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
 }
+
+document.getElementById("button25")
+  .addEventListener("click", () => selectSetAndScroll(25));
+
+document.getElementById("button50")
+  .addEventListener("click", () => selectSetAndScroll(50));
+
+    document.getElementById("prevImage")
+      .addEventListener("click", () => showImage(currentImage - 1));
+    document.getElementById("nextImage")
+      .addEventListener("click", () => showImage(currentImage + 1));
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    document.getElementById("galleryTouchArea")
+      .addEventListener("touchstart", event => {
+        touchStartX = event.changedTouches[0].screenX;
+        touchStartY = event.changedTouches[0].screenY;
+      }, { passive: true });
+
+    document.getElementById("galleryTouchArea")
+      .addEventListener("touchend", event => {
+        const deltaX = touchStartX - event.changedTouches[0].screenX;
+        const deltaY = touchStartY - event.changedTouches[0].screenY;
+
+        if (Math.abs(deltaX) > 50 &&
+            Math.abs(deltaX) > Math.abs(deltaY)) {
+          showImage(currentImage + (deltaX > 0 ? 1 : -1));
+        }
+      }, { passive: true });
+
+    selectSet(25);
+    showImage(0);
