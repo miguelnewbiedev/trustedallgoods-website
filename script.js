@@ -137,6 +137,7 @@ const images = [
     const products = {
       25: {
         title: "25 Set — 32 oz Deli Containers",
+        price: "$13.49",
         eyebrow: "Best for Weekly Meal Prep",
         description:
           "A practical starter option for everyday meals, leftovers, and smaller households.",
@@ -154,6 +155,7 @@ const images = [
       },
       50: {
         title: "50 Set — 32 oz Deli Containers",
+        price: "$23.99",
         eyebrow: "Best for Families & Bulk Storage",
         description:
           "A larger option for families, restaurants, bulk storage, and high-volume kitchen use.",
@@ -209,6 +211,8 @@ const images = [
     function selectSet(set) {
       selectedSet = set;
       const product = products[set];
+
+    document.getElementById("productPrice").textContent = product.price;
 
     document.getElementById("button25")
         .classList.toggle("active", set === 25);
