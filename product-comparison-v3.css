@@ -244,5 +244,22 @@
        scroll-margin-top: 24px;
     }
 
+/* Product Comparison 3.0 — Features list */
+.product-comparison-v3 .accordions details ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.product-comparison-v3 .accordions details li {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.product-comparison-v3 .accordions details li::before {
+  content: none;
+}
+
 
   

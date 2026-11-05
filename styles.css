@@ -1,7 +1,6 @@
-object-fit: cover;
-
+.ugc-video {
+  object-fit: cover;
   background: #000;
-
 }
 
 .ugc-video-vertical {

@@ -247,13 +247,25 @@ const images = [
     }
 
     function selectSetAndScroll(set) {
-        selectSet(set);
+  selectSet(set);
 
-    document.getElementById("productEyebrow")
-       .scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-    });
+  const eyebrow = document.getElementById("productEyebrow");
+
+  if (!eyebrow) return;
+
+  const header = document.querySelector(".site-header");
+  const headerHeight = header ? header.getBoundingClientRect().height : 0;
+
+  const targetPosition =
+    eyebrow.getBoundingClientRect().top +
+    window.scrollY -
+    headerHeight -
+    20;
+
+  window.scrollTo({
+    top: Math.max(0, targetPosition),
+    behavior: "smooth"
+  });
 }
 
 document.getElementById("button25")
