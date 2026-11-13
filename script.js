@@ -137,7 +137,7 @@ const images = [
     const products = {
       25: {
         title: "25 Set — 32 oz Deli Containers",
-        price: "$13.49",
+        price: "$14.16",
         eyebrow: "Best for Weekly Meal Prep",
         description:
           "A practical starter option for everyday meals, leftovers, and smaller households.",
