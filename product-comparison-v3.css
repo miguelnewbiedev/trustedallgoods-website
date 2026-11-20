@@ -293,5 +293,11 @@
   color: #64748b;
 }
 
+.product-comparison-v3 .product-unit-price {
+  font-size: 14px;
+  color: #64748b;
+  white-space: nowrap;
+}
+
 
   

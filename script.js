@@ -214,6 +214,9 @@ const images = [
 
     document.getElementById("productPrice").textContent = product.price;
 
+    document.getElementById("productUnitPrice").textContent =
+      `($${(parseFloat(product.price.replace("$", "")) / set).toFixed(2)} per container)`;
+
     document.getElementById("button25")
         .classList.toggle("active", set === 25);
 
